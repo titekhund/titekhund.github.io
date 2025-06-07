@@ -12,7 +12,7 @@ url: "https://titekhund.github.io" # your GitHub Pages URL
 
 # Build settings
 markdown: kramdown
-theme: minimal-mistakes-jekyll
+remote_theme: mmistakes/minimal-mistakes
 
 plugins:
   - jekyll-feed
