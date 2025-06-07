@@ -1,7 +1,7 @@
 # Site settings
 title: "Tato Khundadze"
 name: "Tato Khundadze"
-email: "your@email.com" # <- replace with your real email
+email: "your@email.com" # Replace with your email
 description: >-
   PhD candidate in Economics at The New School, specializing in machine learning applications 
   to macroeconomic modeling and economic dynamics. Research integrates deep reinforcement learning, 
@@ -30,23 +30,23 @@ author:
     PhD candidate in Economics at The New School. Interested in deep reinforcement learning, 
     SINDy, and policy modeling. Consultant and teacher in machine learning for economics.
   location: "New York, USA"
-  email: "your@email.com" # <- replace with your real email
+  email: "your@email.com" # Replace with your email
   links:
     - label: "Email"
       icon: "fas fa-envelope"
-      url: "mailto:your@email.com" # <- replace with your real email
+      url: "mailto:your@email.com" # Replace with your email
     - label: "GitHub"
       icon: "fab fa-github"
       url: "https://github.com/titekhund"
     - label: "Google Scholar"
       icon: "ai ai-google-scholar"
-      url: "https://scholar.google.com/your-profile" # <- replace with your real Google Scholar profile
+      url: "https://scholar.google.com/your-profile" # Replace with your Google Scholar profile
     - label: "Twitter"
       icon: "fab fa-twitter"
-      url: "https://twitter.com/yourhandle" # <- replace with your actual Twitter handle
+      url: "https://twitter.com/yourhandle" # Replace with your Twitter handle
     - label: "CV"
       icon: "fas fa-file-pdf"
-      url: "/assets/files/CV_tk.pdf" # <- ensure this path/file exists
+      url: "/assets/files/CV_tk.pdf"
 
 # Layout settings
 defaults:
@@ -66,12 +66,12 @@ permalink: /:categories/:title/
 
 # Social sharing and analytics
 twitter:
-  username: yourhandle # <- replace with your actual Twitter handle
+  username: yourhandle # Replace with your Twitter handle
 
 analytics:
   provider: "google-gtag"
   google:
-    tracking_id: "UA-XXXXXXXXX-X" # <- replace with your Google Analytics tracking ID
+    tracking_id: "UA-XXXXXXXXX-X" # Replace with your GA tracking ID
     anonymize_ip: true
 
 # Optional
