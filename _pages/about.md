@@ -10,6 +10,6 @@ My research integrates:
 - SINDy for nonlinear model discovery
 - Econometrics for policy design
 
-I’ve worked with UNDP, CEP, and currently teach undergraduate and graduate-level courses in econometrics and ML.
+I’ve worked with UNDP, CEP, and currently teach undergraduate and graduate-level courses in econometrics and machine learning.
 
-[Download my CV](../assets/files/CV_tk.pdf)
+[Download my CV](/assets/images/CV_tk.pdf)
