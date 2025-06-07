@@ -1,5 +1,78 @@
+# Site settings
 title: "Tato Khundadze"
 name: "Tato Khundadze"
+email: "your@email.com"
 description: >-
-  PhD candidate in Economics at The New School. Specializing in machine learning for macroeconomic modeling and economic dynamics.
-url: "https://titekhund.github.io"
+  PhD candidate in Economics at The New School, specializing in machine learning applications 
+  to macroeconomic modeling and economic dynamics. Research integrates deep reinforcement learning, 
+  SINDy, and statistical techniques with applied policy analysis.
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://titekhund.github.io" # your GitHub Pages URL
+
+# Build settings
+markdown: kramdown
+theme: minimal-mistakes-jekyll
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-archives
+  - jekyll-paginate
+  - jekyll-include-cache
+
+# Author information
+author:
+  name: "Tato Khundadze"
+  avatar: "/assets/images/bio-photo.jpg" # optional profile picture path
+  bio: >-
+    PhD candidate in Economics at The New School. Interested in deep reinforcement learning, 
+    SINDy, and policy modeling. Consultant and teacher in machine learning for economics.
+  location: "New York, USA"
+  email: "your@email.com"
+  links:
+    - label: "Email"
+      icon: "fas fa-envelope"
+      url: "mailto:your@email.com"
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/titekhund"
+    - label: "Google Scholar"
+      icon: "ai ai-google-scholar"
+      url: "https://scholar.google.com/your-profile"
+    - label: "Twitter"
+      icon: "fab fa-twitter"
+      url: "https://twitter.com/yourhandle"
+    - label: "CV"
+      icon: "fas fa-file-pdf"
+      url: "/assets/files/CV_tk.pdf"
+
+# Layout settings
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+
+# Pagination
+paginate: 5
+paginate_path: /page:num/
+
+# Permalinks
+permalink: /:categories/:title/
+
+# Social sharing and analytics
+twitter:
+  username: yourhandle
+
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "UA-XXXXXXXXX-X" # optional
+    anonymize_ip: true
+
+# Optional
+repository: "titekhund/titekhund.github.io"
