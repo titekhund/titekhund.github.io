@@ -1,27 +1,39 @@
-# Minimal Mistakes remote theme starter
+# Tato Khundadze
 
-Click [**Use this template**](https://github.com/mmistakes/mm-github-pages-starter/generate) button above for the quickest method of getting started with the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
+**PhD Candidate in Economics | The New School for Social Research**
 
-Contains basic configuration to get you a site with:
+Welcome to my academic website. I specialize in applying **machine learning** to **macroeconomic modeling** and **economic dynamics**, with a focus on using methods like **deep reinforcement learning**, **Sparse Identification of Nonlinear Dynamics (SINDy)**, and **statistical model discovery** for analyzing fiscal and monetary policy.
 
-- Sample posts.
-- Sample top navigation.
-- Sample author sidebar with social links.
-- Sample footer links.
-- Paginated home page.
-- Archive pages for posts grouped by year, category, and tag.
-- Sample about page.
-- Sample 404 page.
-- Site wide search.
+## 🔬 Research Interests
+- Scientific Machine Learning for Macroeconomics  
+- Dynamic Policy Optimization  
+- Reinforcement Learning (SAC, PPO)  
+- Nonlinear Dynamical Systems  
+- Structural and Empirical Macroeconomics  
 
-Replace sample content with your own and [configure as necessary](https://mmistakes.github.io/minimal-mistakes/docs/configuration/).
+## 🏫 Teaching & Mentorship
+I have experience teaching undergraduate and graduate courses in:
+- **Econometrics**
+- **Macroeconomic Modeling**
+- **Machine Learning for Economics**
+
+## 🌍 Consulting & Collaboration
+I have collaborated with international institutions such as:
+- **United Nations Development Programme (UNDP)**
+- **Center for Economic Policy (CEP)**
+
+## 🛠️ Skills
+- Python, PyTorch, NumPy, SciML (Julia)
+- Stata, R
+- LaTeX, Git, GitHub Actions
+- Data Visualization and Forecasting
+
+## 📄 [Download My CV](assets/images/CV_tk.pdf)
+
+## 📬 Contact
+- **Email**: khundadzt[at]newschool.edu  
+- **Website**: [tatokhundadze.github.io](https://titekhund.github.io)
 
 ---
 
-## Troubleshooting
-
-If you have a question about using Jekyll, start a discussion on the [Jekyll Forum](https://talk.jekyllrb.com/) or [StackOverflow](https://stackoverflow.com/questions/tagged/jekyll). Other resources:
-
-- [Ruby 101](https://jekyllrb.com/docs/ruby-101/)
-- [Setting up a Jekyll site with GitHub Pages](https://jekyllrb.com/docs/github-pages/)
-- [Configuring GitHub Metadata](https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#configuration) to work properly when developing locally and avoid `No GitHub API authentication could be found. Some fields may be missing or have incorrect data.` warnings.
+_This website is built using the [minimal-mistakes-jekyll](https://github.com/mmistakes/minimal-mistakes) theme and hosted on GitHub Pages._
