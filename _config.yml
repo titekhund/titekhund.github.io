@@ -1,7 +1,7 @@
 # Site settings
 title: "Tato Khundadze"
 name: "Tato Khundadze"
-email: "your@email.com"
+email: "your@email.com" # <- replace with your real email
 description: >-
   PhD candidate in Economics at The New School, specializing in machine learning applications 
   to macroeconomic modeling and economic dynamics. Research integrates deep reinforcement learning, 
@@ -25,28 +25,28 @@ plugins:
 # Author information
 author:
   name: "Tato Khundadze"
-  avatar: "/assets/images/bio-photo.jpg" # optional profile picture path
+  avatar: "/assets/images/bio-photo.jpg"
   bio: >-
     PhD candidate in Economics at The New School. Interested in deep reinforcement learning, 
     SINDy, and policy modeling. Consultant and teacher in machine learning for economics.
   location: "New York, USA"
-  email: "your@email.com"
+  email: "your@email.com" # <- replace with your real email
   links:
     - label: "Email"
       icon: "fas fa-envelope"
-      url: "mailto:your@email.com"
+      url: "mailto:your@email.com" # <- replace with your real email
     - label: "GitHub"
       icon: "fab fa-github"
       url: "https://github.com/titekhund"
     - label: "Google Scholar"
       icon: "ai ai-google-scholar"
-      url: "https://scholar.google.com/your-profile"
+      url: "https://scholar.google.com/your-profile" # <- replace with your real Google Scholar profile
     - label: "Twitter"
       icon: "fab fa-twitter"
-      url: "https://twitter.com/yourhandle"
+      url: "https://twitter.com/yourhandle" # <- replace with your actual Twitter handle
     - label: "CV"
       icon: "fas fa-file-pdf"
-      url: "/assets/files/CV_tk.pdf"
+      url: "/assets/files/CV_tk.pdf" # <- ensure this path/file exists
 
 # Layout settings
 defaults:
@@ -66,12 +66,12 @@ permalink: /:categories/:title/
 
 # Social sharing and analytics
 twitter:
-  username: yourhandle
+  username: yourhandle # <- replace with your actual Twitter handle
 
 analytics:
   provider: "google-gtag"
   google:
-    tracking_id: "UA-XXXXXXXXX-X" # optional
+    tracking_id: "UA-XXXXXXXXX-X" # <- replace with your Google Analytics tracking ID
     anonymize_ip: true
 
 # Optional
