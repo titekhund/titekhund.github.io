@@ -31,7 +31,7 @@ I have collaborated with international institutions such as:
 ## 📄 [Download My CV](assets/images/CV_tk.pdf)
 
 ## 📬 Contact
-- **Email**: khundadzt[at]newschool.edu  
+- **Email**: khundadze[at]newschool.edu  
 - **Website**: [tatokhundadze.github.io](https://titekhund.github.io)
 
 ---
