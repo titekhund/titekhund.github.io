@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
 <body>
+  <div id="header-placeholder"></div>
   <main class="content-container">
     <section id="about" class="page-section">
       <h2>About Me</h2>
@@ -27,5 +28,14 @@
       </div>
     </section>
   </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('../_includes/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    });
+  </script>
 </body>
 </html>

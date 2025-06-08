@@ -38,9 +38,9 @@ html, body {
 .left-panel {
   background: var(--bg-panel);
   color: var(--text-main);
-  width: 240px;
-  min-width: 180px;
-  max-width: 260px;
+  width: 300px;
+  min-width: 220px;
+  max-width: 340px;
   padding: 48px 24px 32px 24px;
   display: flex;
   flex-direction: column;
@@ -125,7 +125,7 @@ html, body {
 }
 
 .right-panel {
-  margin-left: 240px;
+  margin-left: 300px;
   flex: 1;
   padding: 48px 48px 48px 48px;
   background: var(--bg-main);
@@ -365,6 +365,56 @@ a:hover {
 ::-webkit-scrollbar-thumb {
   background: var(--accent);
   border-radius: 8px;
+}
+
+/* --- Site Header Styles --- */
+.site-header {
+    background-color: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-link {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.home-link:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.main-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--accent-hover);
+    text-decoration: none;
 }
 
 /* Utility classes */

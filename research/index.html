@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/research/style.css">
 </head>
 <body>
+  <div id="header-placeholder"></div>
   <main class="research-container">
     <h1>Research</h1>
 
@@ -80,5 +81,14 @@
       </div>
     </section>
   </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('../_includes/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    });
+  </script>
 </body>
 </html>
