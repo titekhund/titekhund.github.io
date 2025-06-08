@@ -38,10 +38,10 @@ html, body {
 .left-panel {
   background: var(--bg-panel);
   color: var(--text-main);
-  width: 340px;
-  min-width: 260px;
-  max-width: 400px;
-  padding: 48px 32px 32px 32px;
+  width: 300px;
+  min-width: 220px;
+  max-width: 340px;
+  padding: 48px 24px 32px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,7 +125,7 @@ html, body {
 }
 
 .right-panel {
-  margin-left: 340px;
+  margin-left: 300px;
   flex: 1;
   padding: 48px 48px 48px 48px;
   background: var(--bg-main);
