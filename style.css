@@ -153,6 +153,45 @@ html, body {
   color: var(--accent-hover);
 }
 
+.page-section {
+    margin-bottom: 60px;
+}
+
+.page-section h2 {
+    font-size: 2rem;
+    color: var(--accent); /* Uses the accent color from your chosen palette */
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.page-section p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.cta-container {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--bg-main); /* Dark text on a light button for contrast */
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: var(--accent-hover);
+    text-decoration: none;
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
 @media (max-width: 900px) {
   #container {
     flex-direction: column;
