@@ -68,3 +68,7 @@ include:
 
 navigation:
   enabled: true
+
+header:
+  nav:
+    - main
