@@ -31,17 +31,14 @@
 
     </div>
 </div>
-  <div id="container">
-    <div id="left-panel-placeholder"></div>
-    <main class="right-panel">
-      <div class="frontpage-contacts">
-        <a href="mailto:khunt758@newschool.edu" title="Email" class="contact-icon"><i class="fas fa-envelope"></i></a>
-        <a href="https://tatokhundadze.academia.edu" target="_blank" title="Academia.edu" class="contact-icon"><i class="fas fa-graduation-cap"></i></a>
-        <a href="https://www.linkedin.com/in/tato-khundadze-7b8732145" target="_blank" title="LinkedIn" class="contact-icon"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/titekhund" target="_blank" title="GitHub" class="contact-icon"><i class="fab fa-github"></i></a>
-      </div>
-    </main>
-  </div>
+  <main class="right-panel">
+    <div class="frontpage-contacts">
+      <a href="mailto:khunt758@newschool.edu" title="Email" class="contact-icon"><i class="fas fa-envelope"></i></a>
+      <a href="https://tatokhundadze.academia.edu" target="_blank" title="Academia.edu" class="contact-icon"><i class="fas fa-graduation-cap"></i></a>
+      <a href="https://www.linkedin.com/in/tato-khundadze-7b8732145" target="_blank" title="LinkedIn" class="contact-icon"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/titekhund" target="_blank" title="GitHub" class="contact-icon"><i class="fab fa-github"></i></a>
+    </div>
+  </main>
   <style>
     .frontpage-contacts {
       position: fixed;
@@ -111,22 +108,6 @@
         entryLinks.forEach(link => {
             link.addEventListener('click', enterSite, { once: true });
         });
-    });
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Adjust the path based on the file's location.
-        // For root index.html: './_includes/left-panel.html'
-        // For /research/ or /teaching/: '../_includes/left-panel.html'
-        const path = window.location.pathname.includes('/research/') || window.location.pathname.includes('/teaching/') 
-                     ? '../_includes/left-panel.html' 
-                     : './_includes/left-panel.html';
-
-        fetch(path)
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('left-panel-placeholder').innerHTML = data;
-            });
     });
   </script>
 </body>
