@@ -9,6 +9,31 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
 <body>
+  <div id="landing-overlay">
+    <div class="landing-content">
+        <img src="/assets/images/profile.jpg" alt="Tato Khundadze" class="landing-profile-photo">
+        <h1 class="landing-name">Tato Khundadze, PhD</h1>
+        <p class="landing-title">PhD candidate in Economics at The New School , specializing in machine learning applications to macroeconomic modeling and economic dynamics. </p>
+        
+        <nav class="landing-nav">
+            <a href="#about">About</a>
+            <a href="research/">Research</a>
+            <a href="teaching/">Teaching</a>
+            <a href="https://titekhund.github.io/assets/images/CV_tk.pdf" target="_blank">CV</a>
+        </nav>
+
+        <div class="landing-social">
+            <a href="https://linkedin.com/in/tato-khundadze-7b8732145" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/titekhund" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://tatokhundadze.academia.edu" target="_blank" aria-label="Academia.edu"><i class="fas fa-graduation-cap"></i></a>
+            <a href="mailto:khunt758@newschool.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <div class="enter-hint">
+            <p>Click anywhere to enter</p>
+        </div>
+    </div>
+</div>
   <div id="container">
     <aside class="left-panel">
       <img src="/assets/images/profile.jpg" alt="Tato Khundadze" class="profile-photo">
@@ -109,5 +134,13 @@
   </style>
   <!-- Font Awesome CDN for icons -->
   <script src="https://kit.fontawesome.com/6e2e6e6e6e.js" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const overlay = document.getElementById('landing-overlay');
+        overlay.addEventListener('click', function() {
+            overlay.classList.add('hidden');
+        }, { once: true });
+    });
+  </script>
 </body>
 </html>
