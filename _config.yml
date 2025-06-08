@@ -1,55 +1,52 @@
-# Site settings
 title: "Tato Khundadze"
 name: "Tato Khundadze"
-email: "your@email.com" # Replace with your email
 description: >-
-  PhD candidate in Economics at The New School, specializing in machine learning applications 
-  to macroeconomic modeling and economic dynamics. Research integrates deep reinforcement learning, 
-  SINDy, and statistical techniques with applied policy analysis.
+  PhD candidate in Economics at The New School, specializing in machine learning applications to macroeconomic modeling and economic dynamics.
 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://titekhund.github.io" # your GitHub Pages URL
+url: "https://titekhund.github.io"
+baseurl: ""
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
-
+theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-archives
   - jekyll-paginate
   - jekyll-include-cache
-  - jekyll-remote-theme
 
-# Author information
+# Author details
 author:
-  name: "Tato Khundadze"
-  avatar: "/assets/images/bio-photo.jpg"
-  bio: >-
-    PhD candidate in Economics at The New School. Interested in deep reinforcement learning, 
-    SINDy, and policy modeling. Consultant and teacher in machine learning for economics.
-  location: "New York, USA"
-  email: "your@email.com" # Replace with your email
+  name     : "Tato Khundadze"
+  avatar   : "/assets/images/profile.jpg" # replace this with your uploaded photo
+  bio      : "PhD candidate in Economics | Machine Learning | Macroeconomics"
+  location : "New York, NY"
+  email    : "your.email@example.com"
   links:
     - label: "Email"
       icon: "fas fa-envelope"
-      url: "mailto:your@email.com" # Replace with your email
+      url: "mailto:your.email@example.com"
     - label: "GitHub"
       icon: "fab fa-github"
       url: "https://github.com/titekhund"
-    - label: "Google Scholar"
-      icon: "ai ai-google-scholar"
-      url: "https://scholar.google.com/your-profile" # Replace with your Google Scholar profile
-    - label: "Twitter"
-      icon: "fab fa-twitter"
-      url: "https://twitter.com/yourhandle" # Replace with your Twitter handle
-    - label: "CV"
-      icon: "fas fa-file-pdf"
-      url: "/assets/files/CV_tk.pdf"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/YOUR-LINKEDIN"
 
-# Layout settings
+# Social media previews
+twitter_username: tato_khundadze
+github_username:  titekhund
+
+# Pagination
+paginate: 5
+paginate_path: /page:num/
+
+# Enable profile sidebar
+show_excerpts: true
+minimal_mistakes_skin: "default"
+
+# Defaults
 defaults:
   - scope:
       path: ""
@@ -57,23 +54,3 @@ defaults:
     values:
       layout: single
       author_profile: true
-
-# Pagination
-paginate: 5
-paginate_path: /page:num/
-
-# Permalinks
-permalink: /:categories/:title/
-
-# Social sharing and analytics
-twitter:
-  username: yourhandle # Replace with your Twitter handle
-
-analytics:
-  provider: "google-gtag"
-  google:
-    tracking_id: "UA-XXXXXXXXX-X" # Replace with your GA tracking ID
-    anonymize_ip: true
-
-# Optional
-repository: "titekhund/titekhund.github.io"
