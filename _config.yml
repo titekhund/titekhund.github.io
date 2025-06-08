@@ -72,3 +72,8 @@ navigation:
 header:
   nav:
     - main
+
+footer:
+  links: false
+  copyright: false
+  powered_by: false
