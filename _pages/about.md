@@ -1,28 +1,37 @@
 ---
-permalink: /about/
+layout: page
 title: "About"
-layout: single
-author_profile: true
+permalink: /about/
 ---
-
 <style>
-.solarized-section {
-  font-size: 1.08em;
-  background: #fdf6e3;
-  border-left: 5px solid #268bd2;
-  margin-bottom: 2em;
-  padding: 1.2em 1.5em;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
-  color: #586e75;
+:root {
+  --base03: #002b36;
+  --base02: #073642;
+  --base01: #586e75;
+  --base00: #657b83;
+  --base0:  #839496;
+  --base1:  #93a1a1;
+  --base2:  #eee8d5;
+  --base3:  #fdf6e3;
+  --yellow: #b58900;
+  --orange: #cb4b16;
+  --red:    #dc322f;
+  --magenta:#d33682;
+  --violet: #6c71c4;
+  --blue:   #268bd2;
+  --cyan:   #2aa198;
+  --green:  #859900;
 }
-.solarized-section h2, .solarized-section h3 {
-  color: #268bd2;
-  margin-top: 0.5em;
+body, .page, .page-content, .main, .right-panel, .section, .section-content {
+  background: var(--base3) !important;
+  color: var(--base00) !important;
 }
-.solarized-section a {
-  color: #2aa198;
-  text-decoration: underline;
+a, .section-title {
+  color: var(--blue) !important;
+}
+.section {
+  background: var(--base2) !important;
+  border-left: 5px solid var(--cyan) !important;
 }
 </style>
 
