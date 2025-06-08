@@ -62,3 +62,6 @@ about_me: >-
   I have experience teaching econometrics and machine learning to both undergraduate and graduate students, and I have contributed to international research and consulting projects with institutions such as the UNDP and the Centre for Economic Policy. My work is grounded in both theoretical rigor and practical application, with a strong interest in data-driven approaches to public policy and macroeconomic forecasting.
 
   Technically, I am proficient in Python, Stata, and LaTeX, and I enjoy developing models that translate economic insight into actionable policy recommendations. I am especially interested in interdisciplinary collaborations at the intersection of economics, data science, and public policy.
+
+include:
+  - _pages
