@@ -1,0 +1,91 @@
+/* General Body and Typography - Should match your main stylesheet */
+body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Container */
+.teaching-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Headings */
+h1 {
+    font-size: 2.5rem;
+    color: #e0e0e0;
+    border-bottom: 2px solid #5dade2; /* Accent color border */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #5dade2;
+    margin-top: 40px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 6px;
+}
+
+/* Summary Paragraph */
+.summary {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #cccccc;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Experience List Styling */
+.experience-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.experience-list li {
+    background-color: #222; /* Slightly lighter than main background */
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.2s;
+    box-shadow: 0 2px 10px rgba(90,173,226,0.07);
+}
+
+.experience-list li:hover {
+    border-color: #5dade2;
+    box-shadow: 0 6px 24px rgba(90,173,226,0.18);
+}
+
+.experience-list li strong {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.experience-list li em {
+    font-style: italic;
+    color: #cccccc; /* Lighter text for institution */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .teaching-container {
+        padding: 8px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    .experience-list li {
+        padding: 12px;
+    }
+}
