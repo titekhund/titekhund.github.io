@@ -38,9 +38,9 @@ html, body {
 .left-panel {
   background: var(--bg-panel);
   color: var(--text-main);
-  width: 300px;
-  min-width: 220px;
-  max-width: 340px;
+  width: 240px;
+  min-width: 180px;
+  max-width: 260px;
   padding: 48px 24px 32px 24px;
   display: flex;
   flex-direction: column;
@@ -125,7 +125,7 @@ html, body {
 }
 
 .right-panel {
-  margin-left: 300px;
+  margin-left: 240px;
   flex: 1;
   padding: 48px 48px 48px 48px;
   background: var(--bg-main);
