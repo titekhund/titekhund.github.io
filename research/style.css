@@ -89,6 +89,54 @@ h2 {
   background: #b58900;
   color: #222;
 }
+
+/* --- Site Header Styles (copied from main style.css for consistency) --- */
+.site-header {
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.site-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-left: 32px;
+    display: inline-block;
+}
+.site-title a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.site-title a:hover {
+    color: #1abc9c;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    float: right;
+    margin-right: 32px;
+}
+.nav-links li {
+    display: inline;
+}
+.nav-links a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #bbbbbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover {
+    color: #2ecc71;
+}
+
 @media (max-width: 600px) {
   .research-container {
     padding: 0 4px;
