@@ -29,9 +29,6 @@
             <a href="mailto:khunt758@newschool.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
 
-        <div class="enter-hint">
-            <p>Click anywhere to enter</p>
-        </div>
     </div>
 </div>
   <div id="container">
@@ -104,9 +101,33 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
         const overlay = document.getElementById('landing-overlay');
-        overlay.addEventListener('click', function() {
+        // Select all links within the landing page
+        const entryLinks = overlay.querySelectorAll('a');
+
+        function enterSite(event) {
+            // Hide the overlay
             overlay.classList.add('hidden');
-        }, { once: true });
+
+            // For links that point to a section on the same page (like #about)
+            // we prevent the default instant jump to create a smoother transition.
+            const href = event.currentTarget.getAttribute('href');
+            if (href.startsWith('#')) {
+                event.preventDefault(); // Stop the browser's instant jump
+                
+                // After the overlay fades out, smoothly scroll to the correct section.
+                // The 500ms delay should be close to your CSS transition time.
+                setTimeout(() => {
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                }, 500);
+            }
+            // For all other links (CV, other pages, external sites), the browser will
+            // navigate to them normally after the overlay is hidden.
+        }
+
+        // Attach the click event listener to every link inside the overlay
+        entryLinks.forEach(link => {
+            link.addEventListener('click', enterSite, { once: true });
+        });
     });
   </script>
   <script>
