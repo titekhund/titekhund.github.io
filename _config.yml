@@ -65,3 +65,6 @@ about_me: >-
 
 include:
   - _pages
+
+navigation:
+  enabled: true
