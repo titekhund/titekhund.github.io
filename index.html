@@ -35,8 +35,51 @@
           Technically, I am proficient in Python, Stata, and LaTeX, and I enjoy developing models that translate economic insight into actionable policy recommendations. I am especially interested in interdisciplinary collaborations at the intersection of economics, data science, and public policy.
         </div>
       </section>
+      <div class="frontpage-contacts">
+        <a href="mailto:khunt758@newschool.edu" title="Email" class="contact-icon"><i class="fas fa-envelope"></i></a>
+        <a href="https://tatokhundadze.academia.edu" target="_blank" title="Academia.edu" class="contact-icon"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://www.linkedin.com/in/tato-khundadze-7b8732145" target="_blank" title="LinkedIn" class="contact-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/titekhund" target="_blank" title="GitHub" class="contact-icon"><i class="fab fa-github"></i></a>
+      </div>
     </main>
   </div>
+  <style>
+    .frontpage-contacts {
+      position: fixed;
+      right: 32px;
+      bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      z-index: 100;
+      background: rgba(245, 247, 238, 0.95);
+      border-radius: 16px;
+      box-shadow: 0 2px 16px rgba(38,139,210,0.10);
+      padding: 18px 18px 18px 18px;
+      align-items: center;
+    }
+    .frontpage-contacts .contact-icon {
+      color: #268bd2;
+      font-size: 2rem;
+      transition: color 0.2s, transform 0.2s;
+      margin: 0 0 0 0;
+      text-decoration: none;
+    }
+    .frontpage-contacts .contact-icon:hover {
+      color: #2aa198;
+      transform: scale(1.15);
+    }
+    @media (max-width: 900px) {
+      .frontpage-contacts {
+        right: 12px;
+        bottom: 12px;
+        padding: 10px 10px 10px 10px;
+      }
+      .frontpage-contacts .contact-icon {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
   <!-- Font Awesome CDN for icons -->
   <script src="https://kit.fontawesome.com/6e2e6e6e6e.js" crossorigin="anonymous"></script>
 </body>
