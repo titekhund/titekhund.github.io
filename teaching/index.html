@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/teaching/style.css">
 </head>
 <body>
+  <div id="left-panel-placeholder"></div>
   <main class="teaching-container">
     <h1>Teaching Experience</h1>
     <p class="summary">Experienced in academic teaching, including undergraduate and graduate courses in econometrics and machine learning for economics. </p>
@@ -44,5 +45,21 @@
       </ul>
     </section>
   </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Adjust the path based on the file's location.
+        // For root index.html: './_includes/left-panel.html'
+        // For /research/ or /teaching/: '../_includes/left-panel.html'
+        const path = window.location.pathname.includes('/research/') || window.location.pathname.includes('/teaching/') 
+                     ? '../_includes/left-panel.html' 
+                     : './_includes/left-panel.html';
+
+        fetch(path)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('left-panel-placeholder').innerHTML = data;
+            });
+    });
+  </script>
 </body>
 </html>

@@ -35,40 +35,7 @@
     </div>
 </div>
   <div id="container">
-    <aside class="left-panel">
-      <img src="/assets/images/profile.jpg" alt="Tato Khundadze" class="profile-photo">
-      <div class="name">Tato Khundadze</div>
-      <div class="title">PhD Candidate in Economics</div>
-      <nav class="nav">
-        <a href="/about/">About</a>
-        <a href="/research/">Research</a>
-        <a href="/teaching/">Teaching</a>
-        <a href="/blog/">Blog</a>
-        <a href="/assets/images/CV_tk.pdf" class="cv-link" target="_blank">CV</a>
-      </nav>
-      <ul class="social-links">
-        <li>
-          <a href="https://linkedin.com/in/tato-khundadze-7b8732145" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/titekhund" target="_blank" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://tatokhundadze.academia.edu" target="_blank" aria-label="Academia.edu">
-            <i class="fas fa-graduation-cap"></i>
-          </a>
-        </li>
-        <li>
-          <a href="mailto:khunt758@newschool.edu" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
-        </li>
-      </ul>
-    </aside>
+    <div id="left-panel-placeholder"></div>
     <main class="right-panel">
       <section id="about" class="page-section">
         <h2>About Me</h2>
@@ -140,6 +107,22 @@
         overlay.addEventListener('click', function() {
             overlay.classList.add('hidden');
         }, { once: true });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Adjust the path based on the file's location.
+        // For root index.html: './_includes/left-panel.html'
+        // For /research/ or /teaching/: '../_includes/left-panel.html'
+        const path = window.location.pathname.includes('/research/') || window.location.pathname.includes('/teaching/') 
+                     ? '../_includes/left-panel.html' 
+                     : './_includes/left-panel.html';
+
+        fetch(path)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('left-panel-placeholder').innerHTML = data;
+            });
     });
   </script>
 </body>
