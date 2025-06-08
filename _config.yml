@@ -22,11 +22,11 @@ author:
   avatar   : "/assets/images/profile.jpg" # replace this with your uploaded photo
   bio      : "PhD candidate in Economics | Machine Learning | Macroeconomics"
   location : "New York, NY"
-  email    : "your.email@example.com"
+  email    : "khunt758@newschool.edu"
   links:
     - label: "Email"
       icon: "fas fa-envelope"
-      url: "mailto:your.email@example.com"
+      url: "mailto:khunt758@newschool.edu"
     - label: "GitHub"
       icon: "fab fa-github"
       url: "https://github.com/titekhund"
