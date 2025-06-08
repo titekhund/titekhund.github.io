@@ -5,8 +5,6 @@ layout: single
 author_profile: true
 ---
 
-# Research
-
 ## Working Papers
 
 ---
