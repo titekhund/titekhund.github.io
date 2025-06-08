@@ -1,15 +1,22 @@
 /* style.css for Tato Khundadze Portfolio Homepage */
 
 :root {
-  --bg-main: #1a1a1a;
-  --bg-panel: #2c3e50;
-  --bg-secondary: #34495e;
-  --accent: #5dade2;
-  --accent-hover: #85c1e9;
-  --text-main: #e0e0e0;
-  --text-secondary: #b5b5b5;
-  --border: #333;
-  --font-main: 'Inter', 'Segoe UI', Arial, sans-serif;
+  /*
+    Modern & Technical Palette
+    - High-contrast, near-black backgrounds for focus.
+    - Sharp, energetic teal for primary accents and links.
+    - Bright green for hover effects to provide clear, dynamic feedback.
+    - Pure white text for maximum readability.
+  */
+  --bg-main: #121212;         /* Main background: A deep, near-black */
+  --bg-panel: #1e1e1e;       /* Left panel background: A subtle, lighter dark gray */
+  --bg-secondary: #242424;    /* Card/section background: Another step lighter for depth */
+  --accent: #1abc9c;         /* Primary Accent: A sharp, modern teal for links and headers */
+  --accent-hover: #2ecc71;   /* Hover Accent: A vibrant green for interactive feedback */
+  --text-main: #ffffff;        /* Main Text: Pure white for crisp contrast */
+  --text-secondary: #bbbbbb;   /* Muted Text: A light gray for less important details */
+  --border: #333;            /* Borders: A dark gray to subtly separate elements */
+  --font-main: 'Inter', 'Segoe UI', Arial, sans-serif; /* Font definition (remains unchanged) */
 }
 
 html, body {
