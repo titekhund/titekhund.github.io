@@ -154,9 +154,7 @@
       const list = publications[sectionId] || [];
       const tpl = document.getElementById('pub-card');
 
-      // ✅ Correct sort: newest first
       list.sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
-      list.reverse();
 
       list.forEach(item => {
         const node = tpl.content.cloneNode(true);
