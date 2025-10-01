@@ -1,94 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Research | Tato Khundadze</title>
-  <link rel="stylesheet" href="/research/style.css">
+  <link rel="stylesheet" href="/research/style.css" />
+  <meta name="description" content="Research and publications by Tato Khundadze."/>
 </head>
 <body>
   <div id="header-placeholder"></div>
-  <main class="research-container">
+
+  <main class="research-container" role="main">
     <h1>Research</h1>
 
-    <section>
+    <section id="working-papers">
       <h2>Working Papers</h2>
-      <div class="publication-card">
-        <h3>European Sovereign Debt Control through Deep Reinforcement Learning and NMPC</h3>
-        <p class="authors"><strong>Tato Khundadze</strong>, W. Semmler</p>
-        <p class="publication-details"><em>Social Science Research Network (SSRN)</em>, 2024</p>
-        <p class="summary">This paper explores the use of advanced computational methods, specifically deep reinforcement learning and nonlinear model predictive control (NMPC), to manage and control European sovereign debt, offering a novel approach to fiscal policy and stability. It introduces a Soft Actor-Critic (SAC) framework for cooperative fiscal and monetary policy coordination across multiple macroeconomic regions.</p>
-        <p class="note">Accepted at AI for Human Learning and Behavior Change Journal (2025)</p>
-        <div class="links">
-          <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5133114" target="_blank">View on SSRN</a>
-        </div>
-      </div>
-      <div class="publication-card">
-        <h3>Scientific Machine Learning for Discovering Nonlinear Macroeconomic Dynamics</h3>
-        <p class="summary">Uses sparse regression and neural differential equations to uncover structural dynamics in business cycle models such as Goodwin and Kaldor-type systems.</p>
-      </div>
+      <div class="cards"></div>
     </section>
 
-    <section>
+    <section id="published-papers">
       <h2>Published Papers</h2>
-      <div class="publication-card">
-        <h3>NEOLIBERAL LOCK-IN: Why Georgia-EU Free Trade Does Not Work</h3>
-        <p class="authors"><strong>Tato Khundadze</strong>, Salome Topuria</p>
-        <p class="publication-details"><em>Social Science Research Network (SSRN)</em>, 2022</p>
-        <p class="summary">This paper analyzes Georgia's trade with the EU following the 2014 DCFTA. It argues that trade dynamics have not improved and the quality of Georgia's export basket has deteriorated, showing a decrease in sophistication and a rise in low-tech and resource-based products.</p>
-        <div class="links">
-          <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5136005" target="_blank">View on SSRN</a>
-        </div>
-      </div>
-      <div class="publication-card">
-        <h3>STRIVING FOR SHARED PROSPERITY: A proposal for income tax reform in Georgia with the aim of reducing inequality and mobilizing resources for industrial development</h3>
-        <p class="authors">Sarah Godar, <strong>Tato Khundadze</strong>, Achim Truger</p>
-        <p class="publication-details"><em>Friedrich-Ebert-Stiftung (FES)</em>, 2018</p>
-        <p class="summary">This study addresses Georgia's structural economic issues, including inequality, poverty, and underemployment. It proposes a progressive tax system to reduce inequality and fund industrial development by investing in human capital, support for SMEs, and research and development.</p>
-        <div class="links">
-          <a href="https://library.fes.de/pdf-files/bueros/georgien/15110.pdf" target="_blank">View PDF</a>
-        </div>
-      </div>
+      <div class="cards"></div>
     </section>
 
-    <section>
+    <section id="analytical-articles">
       <h2>Analytical Articles</h2>
-      <div class="publication-card">
-        <h3>Balancing the West, Russia and China: Georgia Under Pressure amid the Russia-Ukraine War</h3>
-        <p class="authors"><strong>Tato Khundadze</strong> and Robert H. Wade</p>
-        <p class="publication-details"><em>Oxford Global Society</em>, 2025</p>
-        <p class="summary">This commentary discusses the geopolitical pressures on Georgia following the 2022 Russian invasion of Ukraine. It explores Georgia's delicate position managing its relations with Russia, its goal of EU/NATO integration, and its growing role in the "Middle Corridor" trade route.</p>
-        <div class="links">
-          <a href="https://oxgs.org/2025/04/02/balancing-the-west-russia-and-china-georgia-under-pressure-amid-the-russia-ukraine-war/" target="_blank">Read Article</a>
-        </div>
-      </div>
-      <div class="publication-card">
-        <h3>Letter: Egging on Tbilisi protesters risks new Russian invasion</h3>
-        <p class="authors"><strong>Tato Khundadze</strong></p>
-        <p class="publication-details"><em>Financial Times</em>, 2024</p>
-        <div class="links">
-          <a href="https://www.ft.com/content/b64097cd-3d35-4eeb-b9ee-d84ea24b3ec6" target="_blank">View on FT.com</a>
-        </div>
-      </div>
-       <div class="publication-card">
-        <h3>Time to build factories – again</h3>
-        <p class="authors"><strong>Tato Khundadze</strong></p>
-        <p class="publication-details"><em>International Politics and Society (IPS-Journal)</em>, 2019</p>
-        <p class="summary">This article argues for the re-industrialization of Georgia to combat economic challenges like population decline and poverty. The author points out the unsustainability of an agrarian-based economy and advocates for a developmental agenda focused on creating stable, well-paid jobs through industrial policy.</p>
-        <div class="links">
-          <a href="https://www.ips-journal.eu/regions/europe/time-to-build-factories-again-3264/" target="_blank">Read Article</a>
-        </div>
-      </div>
+      <div class="cards"></div>
     </section>
   </main>
+
+  <template id="pub-card">
+    <article class="publication-card">
+      <h3 class="title"></h3>
+      <p class="authors"></p>
+      <p class="publication-details"></p>
+      <p class="summary"></p>
+      <p class="note"></p>
+      <div class="links"></div>
+    </article>
+  </template>
+
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        fetch('/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-            });
+    // Header include
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('/header.html')
+        .then(r => r.ok ? r.text() : '')
+        .then(html => { document.getElementById('header-placeholder').innerHTML = html || ''; })
+        .catch(() => {});
     });
+
+    // ---- Publication data ----
+    const publications = {
+      "working-papers": [
+        {
+          title: "Deep Reinforcement Learning and Sustainable Dynamic Portfolio Management",
+          authorsHtml: "<strong>Tato Khundadze</strong>, W. Semmler",
+          venue: "Social Science Research Network (SSRN)",
+          year: "2025",
+          summary: "This paper develops a deep reinforcement learning approach to sustainable dynamic portfolio management, balancing green and fossil fuel assets under crisis scenarios. It demonstrates how policy coordination can drive both financial performance and sustainable outcomes.",
+          links: [
+            { label: "View on SSRN", href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5463316" }
+          ]
+        },
+        {
+          title: "European Sovereign Debt Control through Deep Reinforcement Learning and NMPC",
+          authorsHtml: "<strong>Tato Khundadze</strong>, W. Semmler",
+          venue: "Social Science Research Network (SSRN)",
+          year: "2024",
+          summary: "This paper explores deep reinforcement learning and nonlinear model predictive control (NMPC) to manage European sovereign debt. It introduces a Soft Actor-Critic framework for cooperative fiscal and monetary policy across multiple regions.",
+          note: "Accepted at AI for Human Learning and Behavior Change Journal (2025)",
+          links: [
+            { label: "View on SSRN", href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5133114" }
+          ]
+        },
+        {
+          title: "Scientific Machine Learning for Discovering Nonlinear Macroeconomic Dynamics",
+          authorsHtml: "",
+          venue: "",
+          year: "",
+          summary: "Uses sparse regression and neural differential equations to uncover structural dynamics in business cycle models such as Goodwin and Kaldor-type systems.",
+          links: []
+        }
+      ],
+      "published-papers": [
+        {
+          title: "NEOLIBERAL LOCK-IN: Why Georgia-EU Free Trade Does Not Work",
+          authorsHtml: "<strong>Tato Khundadze</strong>, Salome Topuria",
+          venue: "Social Science Research Network (SSRN)",
+          year: "2022",
+          summary: "Analyzes Georgia's trade with the EU after the 2014 DCFTA, arguing trade dynamics have not improved and export sophistication has declined.",
+          links: [
+            { label: "View on SSRN", href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5136005" }
+          ]
+        },
+        {
+          title: "STRIVING FOR SHARED PROSPERITY: A proposal for income tax reform in Georgia with the aim of reducing inequality and mobilizing resources for industrial development",
+          authorsHtml: "Sarah Godar, <strong>Tato Khundadze</strong>, Achim Truger",
+          venue: "Friedrich-Ebert-Stiftung (FES)",
+          year: "2018",
+          summary: "Proposes progressive taxation to reduce inequality and fund industrial development via human capital, SME support, and R&D.",
+          links: [
+            { label: "View PDF", href: "https://library.fes.de/pdf-files/bueros/georgien/15110.pdf" }
+          ]
+        }
+      ],
+      "analytical-articles": [
+        {
+          title: "Balancing the West, Russia and China: Georgia Under Pressure amid the Russia-Ukraine War",
+          authorsHtml: "<strong>Tato Khundadze</strong> and Robert H. Wade",
+          venue: "Oxford Global Society",
+          year: "2025",
+          summary: "Discusses Georgia’s geopolitical pressures post-2022, EU/NATO goals, relations with Russia, and the Middle Corridor’s role.",
+          links: [
+            { label: "Read Article", href: "https://oxgs.org/2025/04/02/balancing-the-west-russia-and-china-georgia-under-pressure-amid-the-russia-ukraine-war/" }
+          ]
+        },
+        {
+          title: "Letter: Egging on Tbilisi protesters risks new Russian invasion",
+          authorsHtml: "<strong>Tato Khundadze</strong>",
+          venue: "Financial Times",
+          year: "2024",
+          summary: "",
+          links: [
+            { label: "View on FT.com", href: "https://www.ft.com/content/b64097cd-3d35-4eeb-b9ee-d84ea24b3ec6" }
+          ]
+        },
+        {
+          title: "Time to build factories – again",
+          authorsHtml: "<strong>Tato Khundadze</strong>",
+          venue: "International Politics and Society (IPS-Journal)",
+          year: "2019",
+          summary: "Argues for re-industrialization in Georgia to address population decline and poverty through a developmental industrial policy.",
+          links: [
+            { label: "Read Article", href: "https://www.ips-journal.eu/regions/europe/time-to-build-factories-again-3264/" }
+          ]
+        }
+      ]
+    };
+
+    // ---- Renderer ----
+    function renderSection(sectionId) {
+      const container = document.querySelector(`#${sectionId} .cards`);
+      const list = publications[sectionId] || [];
+      const tpl = document.getElementById('pub-card');
+
+      list.sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
+
+      list.forEach(item => {
+        const node = tpl.content.cloneNode(true);
+        node.querySelector('.title').textContent = item.title;
+
+        const authorsEl = node.querySelector('.authors');
+        if (item.authorsHtml) {
+          authorsEl.innerHTML = item.authorsHtml;
+        } else {
+          authorsEl.remove();
+        }
+
+        const details = [];
+        if (item.venue) details.push(`<em>${item.venue}</em>`);
+        if (item.year) details.push(item.year);
+        const detailsEl = node.querySelector('.publication-details');
+        if (details.length) {
+          detailsEl.innerHTML = details.join(', ');
+        } else {
+          detailsEl.remove();
+        }
+
+        const summaryEl = node.querySelector('.summary');
+        if (item.summary) {
+          summaryEl.textContent = item.summary;
+        } else {
+          summaryEl.remove();
+        }
+
+        const noteEl = node.querySelector('.note');
+        if (item.note) {
+          noteEl.textContent = item.note;
+        } else {
+          noteEl.remove();
+        }
+
+        const linksEl = node.querySelector('.links');
+        if (item.links && item.links.length) {
+          item.links.forEach(l => {
+            const a = document.createElement('a');
+            a.textContent = l.label;
+            a.href = l.href;
+            a.target = "_blank";
+            a.rel = "noopener";
+            linksEl.appendChild(a);
+          });
+        } else {
+          linksEl.remove();
+        }
+
+        container.appendChild(node);
+      });
+    }
+
+    ["working-papers", "published-papers", "analytical-articles"].forEach(renderSection);
+  </script>
+
+  <!-- Minimal Schema.org for better previews -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Tato Khundadze",
+    "url":"https://titekhund.github.io",
+    "jobTitle":"PhD Candidate, Economics",
+    "worksFor":{"@type":"CollegeOrUniversity","name":"The New School for Social Research"}
+  }
   </script>
 </body>
 </html>
