@@ -84,6 +84,16 @@
       ],
       "published-papers": [
         {
+          title: "European sovereign debt control through reinforcement learning",
+          authorsHtml: "<strong>Tato Khundadze</strong>, W. Semmler",
+          venue: "Frontiers in Artificial Intelligence",
+          year: "2025",
+          summary: "Published in Frontiers in Artificial Intelligence, this article investigates how reinforcement learning methods can be applied to manage European sovereign debt effectively under complex macroeconomic dynamics.",
+          links: [
+            { label: "View Article", href: "https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2025.1569395/full" }
+          ]
+        },
+        {
           title: "NEOLIBERAL LOCK-IN: Why Georgia-EU Free Trade Does Not Work",
           authorsHtml: "<strong>Tato Khundadze</strong>, Salome Topuria",
           venue: "Social Science Research Network (SSRN)",
@@ -144,7 +154,8 @@
       const list = publications[sectionId] || [];
       const tpl = document.getElementById('pub-card');
 
-      list.sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
+      // Sort newest first
+      list.sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0)).reverse();
 
       list.forEach(item => {
         const node = tpl.content.cloneNode(true);
