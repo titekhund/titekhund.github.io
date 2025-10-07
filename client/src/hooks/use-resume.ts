@@ -1,0 +1,87 @@
+import { useQuery } from "@tanstack/react-query";
+
+export interface ResumeData {
+  name: string;
+  title: string;
+  tagline: string;
+  email: string;
+  website: string;
+  social: {
+    linkedin: string;
+    github: string;
+  };
+  profile: string;
+  education: Array<{
+    degree: string;
+    institution: string;
+    location: string;
+    year: string;
+    details: string;
+  }>;
+  research: Array<{
+    id: string;
+    title: string;
+    year: string;
+    institution: string;
+    summary: string;
+    tech: string[];
+  }>;
+  publications: Array<{
+    id: string;
+    authors: string;
+    title: string;
+    venue: string;
+    year: number;
+    status: string;
+    type: string;
+    link: string;
+  }>;
+  teaching: Array<{
+    id: string;
+    course: string;
+    role: string;
+    institution: string;
+    term: string;
+    description: string;
+  }>;
+  experience: Array<{
+    id: string;
+    role: string;
+    organization: string;
+    location: string;
+    startDate: string;
+    endDate: string;
+    details: string[];
+  }>;
+  skills: {
+    languages: string[];
+    programming: string[];
+    other: string[];
+  };
+  courses: Array<{
+    id: string;
+    name: string;
+    institution: string;
+    year: string;
+  }>;
+  awards: Array<{
+    id: string;
+    name: string;
+    organization: string;
+    year: string;
+    amount?: string;
+    description?: string;
+  }>;
+  references: Array<{
+    name: string;
+    title: string;
+    organization: string;
+    email: string;
+  }>;
+}
+
+export function useResume() {
+  return useQuery<ResumeData>({
+    queryKey: ["/data/resume.json"],
+  });
+}
