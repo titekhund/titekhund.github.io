@@ -1,0 +1,97 @@
+You are a senior full-stack developer. Build a fast, single-repo personal website from my CV with this spec.
+
+=== INPUT ===
+1) My CV (paste below between <<<CV>>> … <<<END>>>):
+<<<CV>>>
+[PASTE YOUR FULL CV TEXT HERE]
+<<<END>>>
+
+2) My name for branding: Tato Khundadze
+3) Preferred stack: Static site (no backend), plain HTML + Tailwind CSS + minimal JS. No frameworks unless necessary. Use semantic HTML5.
+4) Color/typography: modern, accessible, high contrast; headings: Inter or system-UI; body: Inter/Roboto/system-UI. Provide light/dark mode toggle (prefers-color-scheme aware).
+
+=== GOALS ===
+- Parse the CV and generate a personal site with pages/sections:
+  • Home (hero with name, photo placeholder, 1-sentence tagline).
+  • About (short bio from CV).
+  • Research / Projects (cards with title, short abstract, links).
+  • Publications / Working Papers (list with citation, venue/year, links to PDF/DOI).
+  • Teaching (courses, role, term).
+  • Experience (positions with bullets).
+  • Education.
+  • Skills / Tools.
+  • Contact (email button, social icons).
+- Create a JSON content layer (e.g., /data/resume.json) from my CV so content is editable without touching HTML.
+- Auto-generate Open Graph + Twitter meta tags from the JSON.
+- Add basic SEO (title, meta description, sitemap.xml, robots.txt) and structured data (schema.org Person + Article/CreativeWork for publications).
+- Make it fully responsive, keyboard-navigable, and meet WCAG AA basics (skip link, focus styles, alt text placeholders).
+- No external trackers. Optional: lightweight analytics placeholder commented out.
+
+=== FILE STRUCTURE (proposed) ===
+/index.html                  -> Home + About summary + featured projects/publications
+/projects.html               -> All projects
+/publications.html           -> All publications
+/teaching.html               -> Teaching
+/experience.html             -> Work experience
+/contact.html                -> Contact
+/assets/                     -> images, icons
+/css/styles.css              -> Tailwind build output (use CDN or CLI, your choice)
+/js/main.js                  -> site behavior (theme toggle, JSON fetch)
+/data/resume.json            -> parsed CV content source of truth
+/sitemap.xml, /robots.txt
+/README.md                   -> how to edit resume.json, build, and deploy
+
+If you choose a single-page site, keep index.html but implement in-page sections and anchor navigation; still use /data/resume.json.
+
+=== BEHAVIOR ===
+- On load, fetch /data/resume.json and render sections dynamically (or pre-render during build if you use a simple Node script).
+- Implement a dark-mode toggle that persists via localStorage and respects prefers-color-scheme.
+- Smooth scroll for in-page nav; sticky header; active section highlighting.
+
+=== PARSING THE CV ===
+- Extract and normalize:
+  name, headline, email, website, socials
+  education: degree, institution, years, details
+  experience: role, org, location, start/end, bullets
+  publications/working papers: authors, title, venue, year, link/DOI, status
+  research/projects: title, summary, tech, link
+  teaching: course, role, term, brief
+  skills/tools: grouped (Languages, Libraries, Tools)
+- Write parsed data to /data/resume.json. Keep fields consistent and easily editable.
+
+=== DESIGN ===
+- Clean, academic/tech aesthetic.
+- Hero section with name, short tagline from CV (derive if not explicit).
+- Project/publication cards: title, 1–2 line summary, small badges (year/type).
+- Use Tailwind utility classes; minimal custom CSS in styles.css for print and fine-tuning.
+- Print-friendly stylesheet for a one-page printable profile.
+
+=== ACCESSIBILITY & QUALITY ===
+- Semantic tags (header/nav/main/section/article/figure/footer).
+- Visible focus outlines; skip-to-content link.
+- Meaningful aria-labels for icons.
+- Lighthouse targets: Performance ≥ 90, Accessibility ≥ 95, SEO ≥ 90.
+
+=== DELIVERABLES ===
+1) Working site in the Replit project with the structure above.
+2) /data/resume.json filled from my CV.
+3) README.md with:
+   - How to edit /data/resume.json
+   - How to add a new publication/project
+   - How to switch to single-page vs multi-page
+   - How to deploy on Replit + GitHub Pages (static export)
+4) A small Node or Python script (optional) to re-parse updated CV text into resume.json if I paste new CV later (document usage in README).
+
+=== EXTRA (nice to have) ===
+- Add a /feed.xml RSS for publications (derive from resume.json).
+- Add schema.org BreadcrumbList.
+- Contact form using mailto: by default, but leave commented example using Formspree (no secrets in repo).
+
+=== ACCEPTANCE CRITERIA ===
+- All sections populated from resume.json derived from the CV I pasted.
+- No broken links or console errors.
+- Mobile and desktop look great.
+- Dark mode works and persists.
+- README explains edits and deployment clearly.
+
+Now implement this end-to-end with sample placeholder images where needed, then show me a preview and list the key edit points in resume.json.
