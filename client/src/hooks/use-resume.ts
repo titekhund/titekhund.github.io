@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import resumeData from "../data/resume.json";
 
 export interface ResumeData {
   name: string;
@@ -82,6 +83,7 @@ export interface ResumeData {
 
 export function useResume() {
   return useQuery<ResumeData>({
-    queryKey: ["/data/resume.json"],
+    queryKey: ["resume"],
+    queryFn: async () => resumeData as ResumeData,
   });
 }

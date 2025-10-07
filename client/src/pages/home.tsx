@@ -1,10 +1,11 @@
 import { useResume } from "@/hooks/use-resume";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ExternalLink, BookOpen, Briefcase } from "lucide-react";
 import { Link } from "wouter";
 import { Skeleton } from "@/components/ui/skeleton";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   const { data: resume, isLoading } = useResume();
@@ -53,18 +54,22 @@ export default function Home() {
               </div>
 
               <div className="flex flex-wrap gap-3">
-                <Button variant="default" size="lg" asChild data-testid="button-view-publications">
-                  <Link href="/publications">
-                    <BookOpen className="mr-2 h-5 w-5" />
-                    View Publications
-                  </Link>
-                </Button>
-                <Button variant="outline" size="lg" asChild data-testid="button-view-projects">
-                  <Link href="/projects">
-                    <Briefcase className="mr-2 h-5 w-5" />
-                    Research Projects
-                  </Link>
-                </Button>
+                <Link 
+                  href="/publications"
+                  className={cn(buttonVariants({ variant: "default", size: "lg" }))}
+                  data-testid="button-view-publications"
+                >
+                  <BookOpen className="mr-2 h-5 w-5" />
+                  View Publications
+                </Link>
+                <Link 
+                  href="/projects"
+                  className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
+                  data-testid="button-view-projects"
+                >
+                  <Briefcase className="mr-2 h-5 w-5" />
+                  Research Projects
+                </Link>
               </div>
 
               <div className="flex gap-4 pt-4">
@@ -168,12 +173,14 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight" data-testid="heading-featured-publications">
               Featured Publications
             </h2>
-            <Button variant="ghost" asChild data-testid="button-all-publications">
-              <Link href="/publications">
-                View All
-                <ExternalLink className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+            <Link 
+              href="/publications"
+              className={cn(buttonVariants({ variant: "ghost" }))}
+              data-testid="button-all-publications"
+            >
+              View All
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </Link>
           </div>
 
           <div className="space-y-6">
@@ -217,12 +224,14 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight" data-testid="heading-featured-projects">
               Research Projects
             </h2>
-            <Button variant="ghost" asChild data-testid="button-all-projects">
-              <Link href="/projects">
-                View All
-                <ExternalLink className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+            <Link 
+              href="/projects"
+              className={cn(buttonVariants({ variant: "ghost" }))}
+              data-testid="button-all-projects"
+            >
+              View All
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </Link>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

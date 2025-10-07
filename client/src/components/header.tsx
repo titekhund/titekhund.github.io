@@ -2,7 +2,7 @@ import { Link, useLocation } from "wouter";
 import { ThemeToggle } from "./theme-toggle";
 import { FileDown, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function Header() {
   const [location] = useLocation();
@@ -22,6 +22,11 @@ export function Header() {
     if (path === "/") return location === "/";
     return location.startsWith(path);
   };
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location]);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
@@ -94,7 +99,6 @@ export function Header() {
                     ? "bg-primary/10 text-foreground"
                     : "text-muted-foreground"
                 }`}
-                onClick={() => setMobileMenuOpen(false)}
                 data-testid={`link-mobile-${item.label.toLowerCase()}`}
               >
                 {item.label}
