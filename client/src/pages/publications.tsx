@@ -1,7 +1,8 @@
 import { useResume } from "@/hooks/use-resume";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Rss } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useState } from "react";
 
@@ -35,13 +36,23 @@ export default function Publications() {
     <div className="min-h-screen py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4" data-testid="heading-publications">
-            Publications
-          </h1>
-          <p className="text-lg text-muted-foreground">
-            Academic publications, working papers, and policy reports spanning macroeconomics,
-            machine learning, and economic policy analysis.
-          </p>
+          <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
+            <div className="flex-1 min-w-0">
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4" data-testid="heading-publications">
+                Publications
+              </h1>
+              <p className="text-lg text-muted-foreground">
+                Academic publications, working papers, and policy reports spanning macroeconomics,
+                machine learning, and economic policy analysis.
+              </p>
+            </div>
+            <Button variant="outline" asChild data-testid="button-rss-feed">
+              <a href="/feed.xml" target="_blank" rel="noopener noreferrer">
+                <Rss className="h-4 w-4 mr-2" />
+                RSS Feed
+              </a>
+            </Button>
+          </div>
         </div>
 
         <div className="mb-8 flex flex-wrap gap-2">
