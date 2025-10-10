@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/lib/theme-provider";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { StructuredData } from "@/components/structured-data";
+import { Analytics } from "@/components/analytics";
 import Home from "@/pages/home";
 import About from "@/pages/about";
 import Projects from "@/pages/projects";
@@ -37,6 +38,7 @@ function App() {
       <ThemeProvider defaultTheme="system" storageKey="portfolio-theme">
         <TooltipProvider>
           <StructuredData />
+          <Analytics />
           <div className="flex flex-col min-h-screen">
             <a
               href="#main-content"

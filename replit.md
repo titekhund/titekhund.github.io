@@ -90,6 +90,23 @@ Preferred communication style: Simple, everyday language.
 - Optimized fonts with Google Fonts preconnect
 - Skeleton loading states for better perceived performance
 
+### Analytics (Optional)
+
+**Privacy-Friendly Analytics Integration:**
+- Configured for Plausible Analytics and Simple Analytics
+- Disabled by default - configure in `client/src/lib/analytics-config.ts`
+- Automatic page view tracking on route changes
+- GDPR-compliant, cookieless tracking
+- Lightweight scripts (<3KB)
+- No personal data collection
+
+**Setup:**
+1. Choose provider in `analytics-config.ts` (Plausible or Simple Analytics)
+2. Update domain configuration
+3. Deploy - tracking starts automatically
+
+See `docs/ANALYTICS.md` for complete setup instructions.
+
 ### Accessibility Features
 
 - Semantic HTML5 structure
