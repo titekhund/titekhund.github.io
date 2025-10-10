@@ -1,8 +1,10 @@
 import { useEffect } from "react";
+import { useLocation } from "wouter";
 import { useResume } from "@/hooks/use-resume";
 
 export function StructuredData() {
   const { data: resume } = useResume();
+  const [location] = useLocation();
 
   useEffect(() => {
     if (!resume) return;
@@ -51,18 +53,40 @@ export function StructuredData() {
       url: pub.link || undefined,
     }));
 
-    // BreadcrumbList Schema
+    // BreadcrumbList Schema - Route-aware
+    const routeNames: Record<string, string> = {
+      "/": "Home",
+      "/about": "About",
+      "/projects": "Projects",
+      "/publications": "Publications",
+      "/teaching": "Teaching",
+      "/experience": "Experience",
+      "/contact": "Contact",
+    };
+
+    const breadcrumbItems = [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: window.location.origin + "/",
+      },
+    ];
+
+    // Add current page to breadcrumb if not home
+    if (location !== "/" && routeNames[location]) {
+      breadcrumbItems.push({
+        "@type": "ListItem",
+        position: 2,
+        name: routeNames[location],
+        item: window.location.origin + location,
+      });
+    }
+
     const breadcrumbSchema = {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: window.location.origin + "/",
-        },
-      ],
+      itemListElement: breadcrumbItems,
     };
 
     // Create script elements
@@ -87,7 +111,7 @@ export function StructuredData() {
       document.head.removeChild(publicationsScript);
       document.head.removeChild(breadcrumbScript);
     };
-  }, [resume]);
+  }, [resume, location]);
 
   return null;
 }
