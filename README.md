@@ -1,395 +1,191 @@
-# Tato Khundadze - Personal Academic Website
+Tato Khundadze — Academic & Research Website
 
-A modern, accessible personal website showcasing academic research, publications, teaching experience, and professional background. Built with React, TypeScript, and Tailwind CSS.
+A modern, accessible academic portfolio showcasing research in economics, machine learning, and policy, including publications, projects, teaching, and professional experience.
+Built with React, TypeScript, and Tailwind CSS for performance, accessibility, and clean design.
 
-## 🚀 Features
+🎓 About
 
-- **Responsive Design**: Fully responsive across all devices (mobile, tablet, desktop)
-- **Dark Mode**: System-aware dark/light theme with manual toggle
-- **SEO Optimized**: Complete meta tags, Open Graph, Twitter Cards, and schema.org structured data
-- **Accessibility**: WCAG AA compliant with skip links, ARIA labels, and keyboard navigation
-- **Print-Friendly**: Optimized print stylesheet for CV export
-- **Fast Performance**: Optimized for Core Web Vitals (LCP, FID, CLS)
-- **JSON-Driven Content**: All content managed through a single JSON file
+This website serves as the digital home of Tato Khundadze, a PhD Candidate in Economics at The New School for Social Research (NSSR) in New York.
+His research focuses on the intersection of AI and macroeconomics, with applications in deep reinforcement learning, scientific machine learning, and sustainable finance.
 
-## 📁 Project Structure
+The site consolidates:
 
-```
-├── client/
-│   ├── src/
-│   │   ├── components/      # Reusable UI components
-│   │   ├── pages/          # Page components (Home, Projects, etc.)
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── lib/            # Utilities and providers
-│   │   └── App.tsx         # Main app component
-│   └── index.html          # HTML entry point
-├── public/
-│   ├── data/
-│   │   └── resume.json     # ⭐ Content source of truth
-│   ├── sitemap.xml         # SEO sitemap
-│   └── robots.txt          # Search engine directives
-├── server/                 # Express server for development
-└── README.md              # This file
-```
+Working papers and publications (e.g., Frontiers in AI, SSRN)
 
-## 📝 Editing Content
+Conference presentations (ETH AI+Economics, IIASA, LCS)
 
-### Updating Your Resume Data
+Teaching materials (Advanced Econometrics, Machine Learning for Economists)
 
-All website content is stored in `/public/data/resume.json`. Edit this file to update your information:
+Interactive projects using scientific ML and AI in economic policy design
 
-```json
+🚀 Features
+
+Responsive Design – Seamless across desktop, tablet, and mobile
+
+Dark Mode – System-aware with manual toggle
+
+SEO & Metadata – Optimized for Google Scholar and LinkedIn sharing
+
+Accessibility – WCAG AA compliance, keyboard navigation
+
+Print-Friendly CV – Clean export for PDF CVs or academic bios
+
+JSON-Driven Content – All research data and profile details editable from one JSON file
+
+Optimized Performance – Fast load and rendering using Vite + React 18
+
+🧠 Tech Stack
+
+Frontend: React 18 + TypeScript + Tailwind CSS
+
+Build Tool: Vite
+
+Deployment: GitHub Pages via GitHub Actions
+
+Development Server: Express (Node.js)
+
+Data Source: /public/data/resume.json
+
+📁 Project Structure
+client/
+ ├─ src/
+ │   ├─ components/      # Reusable UI (cards, headers, sections)
+ │   ├─ pages/           # Pages (Home, Research, Teaching, CV)
+ │   ├─ hooks/           # Custom React hooks
+ │   ├─ lib/             # Utilities, providers
+ │   └─ App.tsx          # Main app component
+public/
+ ├─ data/resume.json     # ⭐ Source of truth for content
+ ├─ sitemap.xml          # SEO sitemap
+ └─ robots.txt           # Search engine rules
+server/                  # Express dev server
+README.md
+
+📝 Editing Content
+
+All academic content is managed in /public/data/resume.json.
+
+Example — Add a New Research Project
 {
-  "name": "Your Name",
-  "title": "Your Title",
-  "tagline": "Your tagline",
-  "email": "your.email@example.com",
-  ...
+  "id": "research-goodwin",
+  "title": "Discovering Nonlinear Goodwin Dynamics via Sparse Identification (SINDy)",
+  "year": "2024",
+  "institution": "The New School for Social Research",
+  "summary": "Applies sparse model discovery and conformal prediction to macroeconomic cycle analysis.",
+  "tech": ["Python", "PySINDy", "SVR", "Ridge Regression"]
 }
-```
 
-### Adding a New Publication
-
-1. Open `/public/data/resume.json`
-2. Find the `publications` array
-3. Add a new entry:
-
-```json
+Example — Add a New Publication
 {
-  "id": "pub-new",
-  "authors": "Author Names",
-  "title": "Publication Title",
-  "venue": "Journal/Conference Name",
+  "id": "pub-ai-macro",
+  "authors": "Khundadze, T.",
+  "title": "Deep Reinforcement Learning in Sustainable Fiscal Policy",
+  "venue": "Frontiers in Artificial Intelligence",
   "year": 2025,
-  "status": "Published",
+  "status": "In Press",
   "type": "Journal Article",
   "link": "https://doi.org/..."
 }
-```
 
-### Adding a New Research Project
-
-1. Open `/public/data/resume.json`
-2. Find the `research` array
-3. Add a new entry:
-
-```json
+Example — Add Teaching Experience
 {
-  "id": "research-new",
-  "title": "Project Title",
-  "year": "2025",
-  "institution": "Institution Name",
-  "summary": "Brief description of the research project",
-  "tech": ["Technology 1", "Technology 2"]
-}
-```
-
-### Adding New Experience
-
-1. Open `/public/data/resume.json`
-2. Find the `experience` array
-3. Add a new entry:
-
-```json
-{
-  "id": "exp-new",
-  "role": "Your Role",
-  "organization": "Organization Name",
-  "location": "City, Country",
-  "startDate": "2025",
-  "endDate": "Present",
+  "id": "exp-nssr",
+  "role": "Teaching Assistant — Advanced Econometrics I",
+  "organization": "The New School for Social Research",
+  "location": "New York, USA",
+  "startDate": "2023",
+  "endDate": "2024",
   "details": [
-    "Achievement or responsibility 1",
-    "Achievement or responsibility 2"
+    "Guided students through Stata and Python-based econometric applications.",
+    "Developed course materials linking econometrics with reinforcement learning."
   ]
 }
-```
 
-## 🎨 Customizing Design
+🧩 Customization
+Colors
 
-### Colors
+client/src/index.css
 
-Edit color variables in `client/src/index.css`:
-
-```css
 :root {
-  --primary: 217 91% 60%;      /* Main brand color */
-  --accent: 142 76% 36%;       /* Accent/link color */
-  --background: 0 0% 100%;     /* Background color */
-  ...
+  --primary: 217 91% 60%;
+  --accent: 142 76% 36%;
+  --background: 0 0% 100%;
 }
-```
 
-### Fonts
+Fonts
 
-Update font imports in `client/index.html`:
+client/index.html
 
-```html
-<link href="https://fonts.googleapis.com/css2?family=YourFont:wght@400;500;600;700&display=swap" rel="stylesheet">
-```
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-Then update the CSS variable in `client/src/index.css`:
+🧪 Development
+Prerequisites
 
-```css
---font-sans: 'YourFont', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-```
+Node 18 +
 
-## 🚀 Development
+npm or yarn
 
-### Prerequisites
-
-- Node.js 18+ installed
-- npm or yarn package manager
-
-### Running Locally
-
-1. Install dependencies:
-```bash
+Local Run
 npm install
-```
-
-2. Start the development server:
-```bash
 npm run dev
-```
 
-3. Open http://localhost:5000 in your browser
 
-### Building for Production
+Open http://localhost:5000
 
-```bash
+Production Build
 npm run build
-```
 
-The optimized files will be in the `dist/` directory.
 
-## 📦 Deployment
+Output: /dist
 
-### Deploy to Replit
+🌐 Deployment
+GitHub Pages (Recommended)
 
-This project is already configured for Replit deployment:
+GitHub Actions workflow builds and deploys automatically.
+Set Settings → Pages → Source = GitHub Actions.
 
-1. Push your changes to the repository
-2. Click the "Deploy" button in Replit
-3. Your site will be live at `https://your-repl.replit.app`
+Other Options
 
-### Deploy to GitHub Pages
+Netlify: npm run build && netlify deploy --prod --dir=dist
 
-1. **Build the project**:
-```bash
-npm run build
-```
+Vercel: vercel --prod
 
-2. **Create a GitHub repository** and push your code:
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/yourusername/your-repo.git
-git push -u origin main
-```
+Replit: push to main → Deploy
 
-3. **Enable GitHub Pages**:
-   - Go to your repository Settings → Pages
-   - Set Source to "GitHub Actions"
-   - Create `.github/workflows/deploy.yml`:
+📊 SEO & Analytics
 
-```yaml
-name: Deploy to GitHub Pages
+Schema.org structured data for Person and ScholarlyArticle
 
-on:
-  push:
-    branches: [ main ]
+Google Analytics or Plausible Analytics optional integration
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          
-      - name: Install dependencies
-        run: npm ci
-        
-      - name: Build
-        run: npm run build
-        
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-```
+Sitemap + robots.txt ready for Google Scholar indexing
 
-4. **Update URLs**: Replace `https://titekhund.github.io/` in:
-   - `/public/data/resume.json`
-   - `/public/sitemap.xml`
-   - `client/index.html` meta tags
+🎯 Performance Targets
+Metric	Goal
+Lighthouse Performance	≥ 90
+Accessibility	≥ 95
+SEO	≥ 90
+LCP	< 2.5 s
+FID	< 100 ms
+CLS	< 0.1
+🐛 Troubleshooting
 
-5. Your site will be live at `https://yourusername.github.io/your-repo/`
+Resume not loading → verify valid JSON in resume.json
 
-### Deploy to Netlify
+Dark mode issue → clear localStorage
 
-1. Install Netlify CLI:
-```bash
-npm install -g netlify-cli
-```
+Build errors → rm -rf node_modules && npm install
 
-2. Build and deploy:
-```bash
-npm run build
-netlify deploy --prod --dir=dist
-```
+📄 License
 
-### Deploy to Vercel
+Open source for educational and personal use.
 
-1. Install Vercel CLI:
-```bash
-npm install -g vercel
-```
+📞 Contact
 
-2. Deploy:
-```bash
-vercel --prod
-```
+Tato Khundadze
+PhD Candidate in Economics, NSSR (New York)
+📧 khunt758@newschool.edu
 
-## 🔧 Advanced Customization
+🌐 https://titekhund.github.io
 
-### Single-Page vs Multi-Page
-
-The site is currently built as a multi-page React application. To convert to a true single-page layout:
-
-1. Edit `client/src/pages/home.tsx` to include all sections
-2. Update navigation in `client/src/components/header.tsx` to use anchor links (#about, #projects, etc.)
-3. Remove separate route components
-
-### Adding a New Page
-
-1. Create a new component in `client/src/pages/your-page.tsx`:
-
-```tsx
-export default function YourPage() {
-  const { data: resume } = useResume();
-  
-  return (
-    <div className="min-h-screen py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-        <h1>Your Page Title</h1>
-        {/* Your content */}
-      </div>
-    </div>
-  );
-}
-```
-
-2. Add route in `client/src/App.tsx`:
-
-```tsx
-import YourPage from "@/pages/your-page";
-
-// In Router component:
-<Route path="/your-page" component={YourPage} />
-```
-
-3. Add navigation link in `client/src/components/header.tsx`
-
-### Contact Form Integration
-
-To add a functional contact form with Formspree:
-
-1. Sign up at https://formspree.io
-2. Create a new form and get your form ID
-3. Update the contact page with:
-
-```tsx
-<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-  <input type="email" name="email" required />
-  <textarea name="message" required></textarea>
-  <button type="submit">Send</button>
-</form>
-```
-
-## 📊 SEO & Analytics
-
-### SEO Features Included
-
-- ✅ Meta descriptions and keywords
-- ✅ Open Graph tags (Facebook, LinkedIn)
-- ✅ Twitter Card tags
-- ✅ schema.org structured data (Person, ScholarlyArticle)
-- ✅ Sitemap.xml for search engines
-- ✅ Robots.txt configuration
-- ✅ Semantic HTML5 structure
-
-### Adding Analytics
-
-Uncomment and configure analytics in `client/index.html`:
-
-**Google Analytics**:
-```html
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
-```
-
-**Plausible Analytics** (privacy-friendly):
-```html
-<script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script>
-```
-
-## 🎯 Performance Targets
-
-This website is optimized for:
-
-- **Lighthouse Performance**: ≥ 90
-- **Lighthouse Accessibility**: ≥ 95
-- **Lighthouse SEO**: ≥ 90
-- **Largest Contentful Paint (LCP)**: < 2.5s
-- **First Input Delay (FID)**: < 100ms
-- **Cumulative Layout Shift (CLS)**: < 0.1
-
-## 🐛 Troubleshooting
-
-### Resume data not loading
-
-- Check that `/public/data/resume.json` exists and is valid JSON
-- Verify the file is being served correctly at `/data/resume.json`
-- Check browser console for errors
-
-### Dark mode not persisting
-
-- Ensure `localStorage` is enabled in your browser
-- Check that the theme toggle component is properly connected
-
-### Build errors
-
-- Clear node_modules and reinstall: `rm -rf node_modules && npm install`
-- Check Node.js version: `node --version` (should be 18+)
-- Verify all dependencies are installed: `npm install`
-
-## 📄 License
-
-This project is open source and available for personal and commercial use.
-
-## 🤝 Contributing
-
-Feel free to fork this project and customize it for your own use. If you make improvements, consider sharing them back!
-
-## 📞 Support
-
-For questions or issues:
-- Open an issue on GitHub
-- Contact: khunt758@newschool.edu
-
----
-
-Built with ❤️ using React, TypeScript, Tailwind CSS, and Replit
+Built with ❤️ using React, TypeScript, Tailwind CSS, and Vite.
