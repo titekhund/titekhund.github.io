@@ -7,12 +7,14 @@ import { Link } from "wouter";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
-import { MouseEvent } from "react";
+import { MouseEvent, useState } from "react";
 
 export default function Home() {
   const { data: resume, isLoading } = useResume();
   const { toast } = useToast();
   const cvUrl = "/assets/CV_Tato_Khundadze.pdf";
+  const profileImageUrl = "/assets/profile.jpg";
+  const [profileImageError, setProfileImageError] = useState(false);
 
   if (isLoading) {
     return (
@@ -59,6 +61,11 @@ export default function Home() {
         variant: "destructive",
       });
     }
+  };
+
+  const handleProfileImageError = () => {
+    console.warn(`Profile image not found at ${profileImageUrl}`);
+    setProfileImageError(true);
   };
 
   return (
@@ -145,9 +152,19 @@ export default function Home() {
             <div className="flex justify-center md:justify-end">
               <div className="relative">
                 <div className="w-64 h-64 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <div className="w-56 h-56 rounded-full bg-card flex items-center justify-center text-6xl font-bold text-primary">
-                    {resume.name.split(' ').map(n => n[0]).join('')}
-                  </div>
+                  {profileImageError ? (
+                    <div className="w-56 h-56 rounded-full bg-card flex items-center justify-center text-6xl font-bold text-primary">
+                      {resume.name.split(' ').map((n) => n[0]).join('')}
+                    </div>
+                  ) : (
+                    <img
+                      src={profileImageUrl}
+                      alt={`${resume.name} portrait`}
+                      className="w-56 h-56 rounded-full object-cover border border-border shadow-md"
+                      onError={handleProfileImageError}
+                      loading="lazy"
+                    />
+                  )}
                 </div>
               </div>
             </div>
