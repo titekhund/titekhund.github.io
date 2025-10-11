@@ -1,0 +1,398 @@
+{
+  "name": "Tato Khundadze",
+  "title": "PhD Candidate in Economics",
+  "tagline": "Specializing in Machine Learning Applications to Macroeconomic Modeling",
+  "email": "khunt758@newschool.edu",
+  "website": "https://titekhund.github.io/",
+  "social": {
+    "linkedin": "https://linkedin.com/in/tato-khundadze-7b8732145",
+    "github": "https://github.com/titekhund"
+  },
+  "profile": "PhD candidate in Economics at The New School, specializing in machine learning applications to macroeconomic modeling and economic dynamics. Research integrates deep reinforcement learning, SINDy, and statistical techniques with applied policy analysis. Experienced in academic teaching, including undergraduate and graduate courses in econometrics and machine learning for economics. Background includes international research collaboration and consulting for institutions such as UNDP and CEP. Proficient in Python, Stata, and LaTeX, with strong interests in data-driven approaches to macroeconomic modeling and policy design.",
+  "education": [
+    {
+      "degree": "Ph.D. in Economics",
+      "institution": "The New School",
+      "location": "New York, NY",
+      "year": "Expected 2026",
+      "details": ""
+    },
+    {
+      "degree": "MA in Economics",
+      "institution": "The New School",
+      "location": "New York, NY",
+      "year": "Completed",
+      "details": ""
+    },
+    {
+      "degree": "B.Sc in Engineering Sciences",
+      "institution": "Georgian Technical University",
+      "location": "Tbilisi, Georgia",
+      "year": "Completed",
+      "details": ""
+    }
+  ],
+  "research": [
+    {
+      "id": "research-1",
+      "title": "EU Debt Management Using Deep Reinforcement Learning and Nonlinear Model Predictive Control (NMPC)",
+      "year": "2024",
+      "institution": "NSSR",
+      "summary": "Advanced application of deep reinforcement learning techniques combined with NMPC for optimal European Union debt management strategies.",
+      "tech": ["Deep Reinforcement Learning", "NMPC", "Python"]
+    },
+    {
+      "id": "research-2",
+      "title": "Applying SINDy (Sparse Identification of Nonlinear Dynamics) in Growth Models",
+      "year": "2024-2025",
+      "institution": "NSSR",
+      "summary": "Novel application of sparse identification techniques to discover governing equations in economic growth models.",
+      "tech": ["SINDy", "Machine Learning", "Economic Modeling"]
+    },
+    {
+      "id": "research-3",
+      "title": "Estimation of Surplus Utilization Through Transfer Entropy and Unsupervised Learning",
+      "year": "2024-2025",
+      "institution": "NSSR",
+      "summary": "Investigating surplus utilization patterns using information theory and unsupervised machine learning approaches.",
+      "tech": ["Transfer Entropy", "Unsupervised Learning", "Python"]
+    }
+  ],
+  "publications": [
+    {
+      "id": "pub-1",
+      "authors": "Khundadze, T., Semmler, W.",
+      "title": "Deep Reinforcement Learning and Sustainable Dynamic Portfolio Management",
+      "venue": "SSRN",
+      "year": 2025,
+      "status": "Published",
+      "type": "Journal Article",
+      "link": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5463316"
+    },
+    {
+      "id": "pub-2",
+      "authors": "Khundadze, T., Semmler, W.",
+      "title": "European Sovereign Debt Control through Deep Reinforcement Learning and NMPC",
+      "venue": "Frontiers in Artificial Intelligence",
+      "year": 2025,
+      "status": "Published",
+      "type": "Journal Article",
+      "link": "https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2025.1569395/full"
+    },
+    {
+      "id": "pub-3",
+      "authors": "Topuria, A., Khundadze, T.",
+      "title": "Neoliberal Lock-in: Why Georgia–EU Free Trade Does Not Work",
+      "venue": "SSRN",
+      "year": 2022,
+      "status": "Published",
+      "type": "Working Paper",
+      "link": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5136005"
+    },
+    {
+      "id": "pub-4",
+      "authors": "Khundadze, T., Alvarez, A.",
+      "title": "Can Debt Alleviation Mechanisms Increase National Education Financing",
+      "venue": "Global Campaign for Education",
+      "year": 2022,
+      "status": "Published",
+      "type": "Policy Report",
+      "link": "https://campaignforeducation.org/en/resources/publications/can-debt-alleviation-mechanisms-increase-national-education-financing"
+    },
+    {
+      "id": "pub-5",
+      "authors": "Khundadze, T.",
+      "title": "Public Spending on Education and External Public Debt in Georgia",
+      "venue": "",
+      "year": 2021,
+      "status": "Published",
+      "type": "Research Paper",
+      "link": ""
+    },
+    {
+      "id": "pub-6",
+      "authors": "Godar, S., Khundadze, T., Truger, A.",
+      "title": "Striving for Shared Prosperity: A Proposal for Income Tax Reform in Georgia",
+      "venue": "SSRN",
+      "year": 2018,
+      "status": "Published",
+      "type": "Policy Paper",
+      "link": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5402924"
+    },
+    {
+      "id": "pub-7",
+      "authors": "Khundadze, T., Avaliani, Z.",
+      "title": "Short History of Georgian Industry",
+      "venue": "Ministry of Education of Georgia",
+      "year": 2018,
+      "status": "Published",
+      "type": "Case Study",
+      "link": ""
+    },
+    {
+      "id": "pub-8",
+      "authors": "Khundadze, T.",
+      "title": "Reindustrialize Eastern Europe? Perspectives of Progressive Economic Policy in the Countries of the Eastern Partnership, Russia, and Germany",
+      "venue": "Friedrich-Ebert-Stiftung",
+      "year": 2017,
+      "status": "Published",
+      "type": "Policy Report",
+      "link": "https://library.fes.de/pdf-files/bueros/kiew/13485.pdf"
+    },
+    {
+      "id": "pub-9",
+      "authors": "Adeishvili, D., Khundadze, T.",
+      "title": "Challenges for Industrial Policy in Georgia",
+      "venue": "Friedrich-Ebert-Stiftung South Caucasus",
+      "year": 2016,
+      "status": "Published",
+      "type": "Policy Brief",
+      "link": "https://southcaucasus.fes.de/news-list/e/challenges-for-industrial-policy-in-georgia.html"
+    }
+  ],
+  "teaching": [
+    {
+      "id": "teach-1",
+      "course": "Computer Language Workshop",
+      "role": "Instructor",
+      "institution": "The New School",
+      "term": "Spring 2024",
+      "description": "Python Programming, Basics of Deep Learning and Forecasting in Python"
+    },
+    {
+      "id": "teach-2",
+      "course": "Advanced Econometrics I",
+      "role": "Teaching Assistant",
+      "institution": "The New School",
+      "term": "Fall 2023-2025",
+      "description": ""
+    },
+    {
+      "id": "teach-3",
+      "course": "Summer Math Camp",
+      "role": "Teaching Fellow",
+      "institution": "The New School",
+      "term": "Summer 2023",
+      "description": "Calculus, Differential Equations and Optimization"
+    },
+    {
+      "id": "teach-4",
+      "course": "Introduction to Econometrics",
+      "role": "Teaching Fellow",
+      "institution": "Eugene Lang College",
+      "term": "Spring 2023",
+      "description": ""
+    },
+    {
+      "id": "teach-5",
+      "course": "Winter Intensive Statistics Course",
+      "role": "Teaching Fellow",
+      "institution": "The New School",
+      "term": "Winter 2022-2024",
+      "description": ""
+    },
+    {
+      "id": "teach-6",
+      "course": "Graduate Econometrics",
+      "role": "Teaching Assistant",
+      "institution": "The New School",
+      "term": "Spring 2022-2023",
+      "description": ""
+    },
+    {
+      "id": "teach-7",
+      "course": "Introduction to Economic Reasoning",
+      "role": "Teaching Assistant",
+      "institution": "Barnard College, Columbia University",
+      "term": "Spring 2022",
+      "description": ""
+    },
+    {
+      "id": "teach-8",
+      "course": "Statistics for Social Scientists",
+      "role": "Instructor",
+      "institution": "The New School",
+      "term": "Fall 2021",
+      "description": ""
+    },
+    {
+      "id": "teach-9",
+      "course": "International Political Economy",
+      "role": "Invited Lecturer",
+      "institution": "The Georgian-American University",
+      "term": "2018-2019",
+      "description": ""
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-1",
+      "role": "Research Assistant",
+      "organization": "The New School",
+      "location": "New York, NY",
+      "startDate": "2024",
+      "endDate": "2025",
+      "details": [
+        "Co-authored two papers with Prof. Willi Semmler on reinforcement learning in macroeconomics and finance",
+        "Collaborated on the ongoing book project Using Machine Learning in Macroeconomics",
+        "Provided research assistance on co-authored papers on (i) optimal control with carbon emission and temperature constraints, and (ii) carbon tax vs. renewable energy innovation"
+      ]
+    },
+    {
+      "id": "exp-2",
+      "role": "Research Consultant",
+      "organization": "The Council on Economic Policies (CEP)",
+      "location": "Remote",
+      "startDate": "May 2023",
+      "endDate": "September 2023",
+      "details": [
+        "Analyzed tax expenditure reports across various countries, assessed performance on five key dimensions",
+        "Compiled supporting documentation and contributed to the refinement of the GTETI survey questions"
+      ]
+    },
+    {
+      "id": "exp-3",
+      "role": "Research Student Assistant",
+      "organization": "The New School",
+      "location": "New York, NY",
+      "startDate": "Fall 2022",
+      "endDate": "Fall 2022",
+      "details": [
+        "Analyzed the AAUP-TNS Faculty Working Conditions Survey"
+      ]
+    },
+    {
+      "id": "exp-4",
+      "role": "Data Analyst Intern",
+      "organization": "UNDP",
+      "location": "New York, NY",
+      "startDate": "July 2022",
+      "endDate": "January 2023",
+      "details": [
+        "Developed the Multidimensional Poverty Index (MPI) dataset, coding in Stata to disaggregate MPI estimates for 98 countries by gender, area, and region"
+      ]
+    },
+    {
+      "id": "exp-5",
+      "role": "Research Student Assistant",
+      "organization": "The New School",
+      "location": "New York, NY",
+      "startDate": "2020",
+      "endDate": "2021",
+      "details": [
+        "Research assistant to Professor Ying Chen"
+      ]
+    },
+    {
+      "id": "exp-6",
+      "role": "Graduate Student Assistant and Economics Department Student Liaison",
+      "organization": "The New School",
+      "location": "New York, NY",
+      "startDate": "2019",
+      "endDate": "2021",
+      "details": []
+    },
+    {
+      "id": "exp-7",
+      "role": "Head of Analysis Division",
+      "organization": "Georgian Public Broadcaster",
+      "location": "Tbilisi, Georgia",
+      "startDate": "2017",
+      "endDate": "2019",
+      "details": [
+        "Led a public research initiative for Georgian 1st Channel, coordinated with government ministries, the National Bank of Georgia, and academic institutions",
+        "Conducted fiscal, trade, and unemployment policy analyses, organized high-profile conferences and roundtables",
+        "Maintained a regular media presence and interviewed prominent economists including Ha-Joon Chang, Jeffrey Sachs, Robert Wade, and Erik Reinert"
+      ]
+    },
+    {
+      "id": "exp-8",
+      "role": "Project Manager, Researcher",
+      "organization": "Caucasian House",
+      "location": "Tbilisi, Georgia",
+      "startDate": "2010",
+      "endDate": "2017",
+      "details": []
+    },
+    {
+      "id": "exp-9",
+      "role": "Consultant",
+      "organization": "University of California, Irvine",
+      "location": "Remote",
+      "startDate": "2014",
+      "endDate": "2016",
+      "details": []
+    },
+    {
+      "id": "exp-10",
+      "role": "Intern",
+      "organization": "Centre for Strategic Analysis of Georgia",
+      "location": "Tbilisi, Georgia",
+      "startDate": "2009",
+      "endDate": "2009",
+      "details": []
+    }
+  ],
+  "skills": {
+    "languages": ["Georgian", "English", "Russian"],
+    "programming": ["Python", "Stata", "R", "Excel", "EViews", "MATLAB (basic)", "LaTeX", "Git", "Quarto"],
+    "other": ["Academic research", "Teaching", "Training", "Consultation"]
+  },
+  "courses": [
+    {
+      "id": "course-1",
+      "name": "MicroMasters Program in Statistics and Data Science",
+      "institution": "MIT",
+      "year": "2024-2025"
+    },
+    {
+      "id": "course-2",
+      "name": "Machine Learning Specialization",
+      "institution": "Stanford Online (DeepLearning.ai)",
+      "year": "2023"
+    }
+  ],
+  "awards": [
+    {
+      "id": "award-1",
+      "name": "Dissertation Fellowship",
+      "organization": "The New School",
+      "year": "2024-2025",
+      "amount": "$25,000"
+    },
+    {
+      "id": "award-2",
+      "name": "Prize Fellowship",
+      "organization": "The New School",
+      "year": "2021",
+      "description": "Full PhD tuition and Stipend for 3 years"
+    },
+    {
+      "id": "award-3",
+      "name": "Georgian Government Scholarship and The New School Fellowship",
+      "organization": "The New School",
+      "year": "2019",
+      "description": "Full Master's Tuition and Stipend"
+    }
+  ],
+  "references": [
+    {
+      "name": "Prof. Willi Semmler",
+      "title": "Professor of Economics",
+      "organization": "The New School & IIASA",
+      "email": "semmlerw@newschool.edu"
+    },
+    {
+      "name": "Prof. Robert H. Wade",
+      "title": "Professor of Global Political Economy",
+      "organization": "London School of Economics (LSE)",
+      "email": "R.Wade@lse.ac.uk"
+    },
+    {
+      "name": "Prof. Ying Chen",
+      "title": "Associate Professor of Economics",
+      "organization": "New School for Social Research",
+      "email": "yingc@newschool.edu"
+    }
+  ]
+}
