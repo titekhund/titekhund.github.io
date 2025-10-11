@@ -13,7 +13,7 @@ export default function Home() {
   const { data: resume, isLoading } = useResume();
   const { toast } = useToast();
   const cvUrl = "/assets/CV_Tato_Khundadze.pdf";
-  const profileImageUrl = "/assets/profile.jpg";
+  const profileImageUrl = "/assets/profile.jpeg";
   const [profileImageError, setProfileImageError] = useState(false);
 
   if (isLoading) {
@@ -151,16 +151,16 @@ export default function Home() {
 
             <div className="flex justify-center md:justify-end">
               <div className="relative">
-                <div className="w-64 h-64 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                <div className="w-64 h-64 md:w-72 md:h-72 max-w-full rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
                   {profileImageError ? (
-                    <div className="w-56 h-56 rounded-full bg-card flex items-center justify-center text-6xl font-bold text-primary">
+                    <div className="w-56 h-56 md:w-64 md:h-64 rounded-full bg-card flex items-center justify-center text-6xl font-bold text-primary">
                       {resume.name.split(' ').map((n) => n[0]).join('')}
                     </div>
                   ) : (
                     <img
                       src={profileImageUrl}
                       alt={`${resume.name} portrait`}
-                      className="w-56 h-56 rounded-full object-cover border border-border shadow-md"
+                      className="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover object-center border border-border shadow-md"
                       onError={handleProfileImageError}
                       loading="lazy"
                     />
