@@ -7,14 +7,12 @@ import { Link } from "wouter";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
-import { MouseEvent, useState } from "react";
+import { MouseEvent } from "react";
 
 export default function Home() {
   const { data: resume, isLoading } = useResume();
   const { toast } = useToast();
   const cvUrl = "/assets/CV_Tato_Khundadze.pdf";
-  const profileImageUrl = "/assets/profile.jpeg";
-  const [profileImageError, setProfileImageError] = useState(false);
 
   if (isLoading) {
     return (
@@ -63,18 +61,13 @@ export default function Home() {
     }
   };
 
-  const handleProfileImageError = () => {
-    console.warn(`Profile image not found at ${profileImageUrl}`);
-    setProfileImageError(true);
-  };
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-          <div className="grid md:grid-cols-3 gap-12 items-center">
-            <div className="md:col-span-2 space-y-6">
+          <div className="grid gap-12 items-center">
+            <div className="space-y-6">
               <div>
                 <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4" data-testid="text-name">
                   {resume.name}
@@ -146,26 +139,6 @@ export default function Home() {
                 >
                   <Mail className="h-6 w-6" />
                 </a>
-              </div>
-            </div>
-
-            <div className="flex justify-center md:justify-end">
-              <div className="relative">
-                <div className="w-64 h-64 md:w-72 md:h-72 max-w-full rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  {profileImageError ? (
-                    <div className="w-56 h-56 md:w-64 md:h-64 rounded-full bg-card flex items-center justify-center text-6xl font-bold text-primary">
-                      {resume.name.split(' ').map((n) => n[0]).join('')}
-                    </div>
-                  ) : (
-                    <img
-                      src={profileImageUrl}
-                      alt={`${resume.name} portrait`}
-                      className="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover object-center border border-border shadow-md"
-                      onError={handleProfileImageError}
-                      loading="lazy"
-                    />
-                  )}
-                </div>
               </div>
             </div>
           </div>
