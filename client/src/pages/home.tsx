@@ -2,13 +2,17 @@ import { useResume } from "@/hooks/use-resume";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import { Github, Linkedin, Mail, ExternalLink, BookOpen, Briefcase } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, BookOpen, Briefcase, FileDown } from "lucide-react";
 import { Link } from "wouter";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
+import { useToast } from "@/hooks/use-toast";
+import { MouseEvent } from "react";
 
 export default function Home() {
   const { data: resume, isLoading } = useResume();
+  const { toast } = useToast();
+  const cvUrl = "/assets/CV_Tato_Khundadze.pdf";
 
   if (isLoading) {
     return (
@@ -33,6 +37,29 @@ export default function Home() {
 
   const featuredPublications = resume.publications.slice(0, 3);
   const featuredProjects = resume.research.slice(0, 3);
+
+  const handleCvDownload = async (event: MouseEvent<HTMLAnchorElement>) => {
+    try {
+      const response = await fetch(cvUrl, { method: "HEAD" });
+      if (!response.ok) {
+        event.preventDefault();
+        console.warn(`CV PDF not found at ${cvUrl}`);
+        toast({
+          title: "CV unavailable",
+          description: "The PDF could not be found. Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      event.preventDefault();
+      console.warn(`Failed to reach CV PDF at ${cvUrl}`, error);
+      toast({
+        title: "Download failed",
+        description: "We couldn't open the CV PDF. Please try again later.",
+        variant: "destructive",
+      });
+    }
+  };
 
   return (
     <div className="min-h-screen">
@@ -70,6 +97,17 @@ export default function Home() {
                   <Briefcase className="mr-2 h-5 w-5" />
                   Research Projects
                 </Link>
+                <a
+                  href={cvUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(buttonVariants({ variant: "secondary", size: "lg" }))}
+                  onClick={handleCvDownload}
+                  data-testid="button-download-cv-pdf"
+                >
+                  <FileDown className="mr-2 h-5 w-5" />
+                  Download CV (PDF)
+                </a>
               </div>
 
               <div className="flex gap-4 pt-4">

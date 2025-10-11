@@ -1,12 +1,17 @@
 import { Link, useLocation } from "wouter";
 import { ThemeToggle } from "./theme-toggle";
-import { FileDown, Menu, X } from "lucide-react";
+import { FileCode2, FileDown, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useResume } from "@/hooks/use-resume";
+import { downloadResumePdf } from "@/lib/resume-export";
+import { useToast } from "@/hooks/use-toast";
 
 export function Header() {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { data: resume, isLoading: isResumeLoading } = useResume();
+  const { toast } = useToast();
 
   const navItems = [
     { path: "/", label: "Home" },
@@ -27,6 +32,29 @@ export function Header() {
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location]);
+
+  const handleDownloadResume = () => {
+    if (!resume) {
+      toast({
+        title: "Resume not ready",
+        description: "Please wait a moment and try again.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      downloadResumePdf(resume);
+      setMobileMenuOpen(false);
+    } catch (error) {
+      console.error("Failed to generate resume PDF", error);
+      toast({
+        title: "Download failed",
+        description: "We couldn't generate the CV PDF. Please try again later.",
+        variant: "destructive",
+      });
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
@@ -59,10 +87,20 @@ export function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-2">
-            <Button variant="outline" size="sm" asChild data-testid="button-download-cv">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleDownloadResume}
+              disabled={isResumeLoading}
+              data-testid="button-download-cv"
+            >
+              <FileDown className="mr-2 h-4 w-4" />
+              Download CV (PDF)
+            </Button>
+            <Button variant="ghost" size="sm" asChild data-testid="button-download-cv-json">
               <a href="/data/resume.json" download="Tato_Khundadze_CV.json">
-                <FileDown className="mr-2 h-4 w-4" />
-                CV Data
+                <FileCode2 className="mr-2 h-4 w-4" />
+                CV Data (JSON)
               </a>
             </Button>
             <ThemeToggle />
@@ -105,12 +143,25 @@ export function Header() {
               </Link>
             ))}
             <div className="pt-2">
-              <Button variant="outline" size="sm" className="w-full" asChild>
-                <a href="/data/resume.json" download="Tato_Khundadze_CV.json">
+              <div className="space-y-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full"
+                  onClick={handleDownloadResume}
+                  disabled={isResumeLoading}
+                  data-testid="button-download-cv-mobile"
+                >
                   <FileDown className="mr-2 h-4 w-4" />
-                  Download CV Data
-                </a>
-              </Button>
+                  Download CV (PDF)
+                </Button>
+                <Button variant="ghost" size="sm" className="w-full" asChild data-testid="button-download-cv-json-mobile">
+                  <a href="/data/resume.json" download="Tato_Khundadze_CV.json">
+                    <FileCode2 className="mr-2 h-4 w-4" />
+                    CV Data (JSON)
+                  </a>
+                </Button>
+              </div>
             </div>
           </nav>
         )}
