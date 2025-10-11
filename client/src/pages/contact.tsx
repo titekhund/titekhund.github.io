@@ -1,54 +1,12 @@
 import { useResume } from "@/hooks/use-resume";
+import type { ResumeData } from "@/hooks/use-resume";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Mail, Globe, Github, Linkedin, User, Send } from "lucide-react";
+import { Mail, Globe, Github, Linkedin, User } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
   const { data: resume, isLoading } = useResume();
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
-      });
-
-      if (response.ok) {
-        toast({
-          title: "Message sent!",
-          description: "Thank you for your message. I'll get back to you soon.",
-        });
-        form.reset();
-      } else {
-        throw new Error("Form submission failed");
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again or email directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   if (isLoading) {
     return (
@@ -157,7 +115,7 @@ export default function Contact() {
           <Card className="p-8">
             <h2 className="text-2xl font-semibold mb-6">Academic References</h2>
             <div className="space-y-6">
-              {resume.references.map((ref, idx) => (
+              {resume.references.map((ref: ResumeData["references"][number], idx: number) => (
                 <div key={idx} className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10 text-primary">
                     <User className="h-5 w-5" />
@@ -185,84 +143,6 @@ export default function Contact() {
             </div>
           </Card>
         </div>
-
-        <Card className="p-8 bg-card/50">
-          <h2 className="text-2xl font-semibold mb-6">Send a Message</h2>
-          <form
-            action="https://formspree.io/f/YOUR_FORM_ID"
-            method="POST"
-            onSubmit={handleSubmit}
-            className="space-y-6"
-            data-testid="contact-form"
-          >
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="space-y-2">
-                <Label htmlFor="name">Name *</Label>
-                <Input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                  placeholder="Your name"
-                  data-testid="input-name"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="email">Email *</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="your.email@example.com"
-                  data-testid="input-email"
-                />
-              </div>
-            </div>
-            
-            <div className="space-y-2">
-              <Label htmlFor="subject">Subject *</Label>
-              <Input
-                id="subject"
-                name="subject"
-                type="text"
-                required
-                placeholder="What is this regarding?"
-                data-testid="input-subject"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="message">Message *</Label>
-              <Textarea
-                id="message"
-                name="message"
-                required
-                placeholder="Your message..."
-                rows={6}
-                data-testid="textarea-message"
-              />
-            </div>
-
-            <div className="flex items-start gap-4 p-4 bg-muted/50 rounded-lg text-sm text-muted-foreground">
-              <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" />
-              <p>
-                <strong>Note:</strong> To enable this contact form, replace <code className="bg-background px-1 rounded">YOUR_FORM_ID</code> in the form action with your Formspree form ID. 
-                Get one free at <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">formspree.io</a>.
-              </p>
-            </div>
-
-            <Button 
-              type="submit" 
-              size="lg" 
-              disabled={isSubmitting}
-              data-testid="button-submit"
-            >
-              <Send className="h-4 w-4 mr-2" />
-              {isSubmitting ? "Sending..." : "Send Message"}
-            </Button>
-          </form>
-        </Card>
 
         <Card className="p-8 bg-card/50 mt-8">
           <h2 className="text-2xl font-semibold mb-4">Research Interests</h2>
