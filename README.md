@@ -12,7 +12,7 @@ The site consolidates:
 
 Working papers and publications (e.g., Frontiers in AI, SSRN)
 
-Conference presentations (ETH AI+Economics, IIASA, LCS)
+Conference presentations
 
 Teaching materials (Advanced Econometrics, Machine Learning for Economists)
 
