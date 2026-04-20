@@ -10,11 +10,11 @@ import { StructuredData } from "@/components/structured-data";
 import { Analytics } from "@/components/analytics";
 import Home from "@/pages/home";
 import About from "@/pages/about";
-import Projects from "@/pages/projects";
 import Publications from "@/pages/publications";
 import Teaching from "@/pages/teaching";
 import Experience from "@/pages/experience";
 import Contact from "@/pages/contact";
+import Blog from "@/pages/blog";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -22,11 +22,11 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
-      <Route path="/projects" component={Projects} />
       <Route path="/publications" component={Publications} />
       <Route path="/teaching" component={Teaching} />
       <Route path="/experience" component={Experience} />
       <Route path="/contact" component={Contact} />
+      <Route path="/blog" component={Blog} />
       <Route component={NotFound} />
     </Switch>
   );

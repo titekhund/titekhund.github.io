@@ -1,8 +1,11 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Link } from "wouter";
+import { useResume } from "@/hooks/use-resume";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { data: resume } = useResume();
+  const hasBlog = (resume?.blog?.length ?? 0) > 0;
 
   return (
     <footer className="border-t bg-card/30 mt-auto">
@@ -18,27 +21,29 @@ export function Footer() {
               >
                 About
               </Link>
-              <Link 
-                href="/projects"
-                className="block text-sm text-muted-foreground hover:text-foreground transition-colors hover-elevate rounded-md px-2 py-1" 
-                data-testid="footer-link-projects"
-              >
-                Research Projects
-              </Link>
-              <Link 
+              <Link
                 href="/publications"
-                className="block text-sm text-muted-foreground hover:text-foreground transition-colors hover-elevate rounded-md px-2 py-1" 
+                className="block text-sm text-muted-foreground hover:text-foreground transition-colors hover-elevate rounded-md px-2 py-1"
                 data-testid="footer-link-publications"
               >
                 Publications
               </Link>
-              <Link 
+              <Link
                 href="/teaching"
-                className="block text-sm text-muted-foreground hover:text-foreground transition-colors hover-elevate rounded-md px-2 py-1" 
+                className="block text-sm text-muted-foreground hover:text-foreground transition-colors hover-elevate rounded-md px-2 py-1"
                 data-testid="footer-link-teaching"
               >
                 Teaching
               </Link>
+              {hasBlog && (
+                <Link
+                  href="/blog"
+                  className="block text-sm text-muted-foreground hover:text-foreground transition-colors hover-elevate rounded-md px-2 py-1"
+                  data-testid="footer-link-blog"
+                >
+                  Blog
+                </Link>
+              )}
             </nav>
           </div>
 
@@ -46,11 +51,11 @@ export function Footer() {
             <h3 className="font-semibold text-lg mb-4">Contact</h3>
             <div className="space-y-2">
               <a
-                href="mailto:khunt758@newschool.edu"
+                href="mailto:tato.khundadze@gmail.com"
                 className="block text-sm text-muted-foreground hover:text-foreground transition-colors hover-elevate rounded-md px-2 py-1"
                 data-testid="footer-email"
               >
-                khunt758@newschool.edu
+                tato.khundadze@gmail.com
               </a>
               <a
                 href="https://titekhund.github.io/"
@@ -88,7 +93,7 @@ export function Footer() {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="mailto:khunt758@newschool.edu"
+                href="mailto:tato.khundadze@gmail.com"
                 className="hover-elevate rounded-md p-2"
                 aria-label="Email"
                 data-testid="footer-email-icon"

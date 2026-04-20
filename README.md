@@ -131,7 +131,7 @@ server/              # Express utilities for local development
 ### 📄 License & contact
 - Open for educational and personal reuse—credit appreciated.
 - Questions or collaboration ideas? Reach out:
-  - **Email:** khunt758@newschool.edu
+  - **Email:** tato.khundadze@gmail.com
   - **Website:** https://titekhund.github.io
 
 Built with ❤️ by Tato Khundadze using React, TypeScript, Tailwind CSS, and Vite.

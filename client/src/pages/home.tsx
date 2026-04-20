@@ -2,16 +2,13 @@ import { useResume } from "@/hooks/use-resume";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import { Github, Linkedin, Mail, ExternalLink, BookOpen, Briefcase, FileDown } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, BookOpen, FileDown, Rss } from "lucide-react";
 import { Link } from "wouter";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
-import { useToast } from "@/hooks/use-toast";
-import { MouseEvent } from "react";
 
 export default function Home() {
   const { data: resume, isLoading } = useResume();
-  const { toast } = useToast();
   const cvUrl = "/assets/CV_Tato_Khundadze.pdf";
 
   if (isLoading) {
@@ -36,30 +33,8 @@ export default function Home() {
   if (!resume) return null;
 
   const featuredPublications = resume.publications.slice(0, 3);
-  const featuredProjects = resume.research.slice(0, 3);
-
-  const handleCvDownload = async (event: MouseEvent<HTMLAnchorElement>) => {
-    try {
-      const response = await fetch(cvUrl, { method: "HEAD" });
-      if (!response.ok) {
-        event.preventDefault();
-        console.warn(`CV PDF not found at ${cvUrl}`);
-        toast({
-          title: "CV unavailable",
-          description: "The PDF could not be found. Please try again later.",
-          variant: "destructive",
-        });
-      }
-    } catch (error) {
-      event.preventDefault();
-      console.warn(`Failed to reach CV PDF at ${cvUrl}`, error);
-      toast({
-        title: "Download failed",
-        description: "We couldn't open the CV PDF. Please try again later.",
-        variant: "destructive",
-      });
-    }
-  };
+  const blogPosts = resume.blog ?? [];
+  const featuredBlog = blogPosts.slice(0, 3);
 
   return (
     <div className="min-h-screen">
@@ -89,20 +64,12 @@ export default function Home() {
                   <BookOpen className="mr-2 h-5 w-5" />
                   View Publications
                 </Link>
-                <Link 
-                  href="/projects"
-                  className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
-                  data-testid="button-view-projects"
-                >
-                  <Briefcase className="mr-2 h-5 w-5" />
-                  Research Projects
-                </Link>
                 <a
                   href={cvUrl}
+                  download
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(buttonVariants({ variant: "secondary", size: "lg" }))}
-                  onClick={handleCvDownload}
                   data-testid="button-download-cv-pdf"
                 >
                   <FileDown className="mr-2 h-5 w-5" />
@@ -245,47 +212,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section className="py-16 bg-card/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight" data-testid="heading-featured-projects">
-              Research Projects
-            </h2>
-            <Link 
-              href="/projects"
-              className={cn(buttonVariants({ variant: "ghost" }))}
-              data-testid="button-all-projects"
-            >
-              View All
-              <ExternalLink className="ml-2 h-4 w-4" />
-            </Link>
-          </div>
+      {featuredBlog.length > 0 && (
+        <section className="py-16 bg-card/30">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight" data-testid="heading-featured-blog">
+                <Rss className="inline-block mr-2 h-7 w-7 align-[-4px]" />
+                Latest from the Blog
+              </h2>
+              <Link
+                href="/blog"
+                className={cn(buttonVariants({ variant: "ghost" }))}
+                data-testid="button-all-blog"
+              >
+                View All
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredProjects.map((project) => (
-              <Card key={project.id} className="p-6 hover-elevate transition-all" data-testid={`project-card-${project.id}`}>
-                <div className="flex items-start justify-between mb-3">
-                  <Badge variant="secondary">{project.year}</Badge>
-                </div>
-                <h3 className="text-lg font-semibold mb-3 line-clamp-2">
-                  {project.title}
-                </h3>
-                <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                  {project.summary}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.slice(0, 2).map((tech) => (
-                    <Badge key={tech} variant="outline" className="text-xs">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </Card>
-            ))}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {featuredBlog.map((post) => (
+                <Card key={post.id} className="p-6 hover-elevate transition-all" data-testid={`blog-card-${post.id}`}>
+                  <Badge variant="secondary" className="mb-3">{post.date}</Badge>
+                  <h3 className="text-lg font-semibold mb-3 line-clamp-2" data-testid={`blog-title-${post.id}`}>
+                    {post.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
+                    {post.summary}
+                  </p>
+                  {post.link && (
+                    <a
+                      href={post.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-accent hover:underline inline-flex items-center"
+                      data-testid={`blog-link-${post.id}`}
+                    >
+                      Read More
+                      <ExternalLink className="ml-1 h-3 w-3" />
+                    </a>
+                  )}
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </div>
   );
 }

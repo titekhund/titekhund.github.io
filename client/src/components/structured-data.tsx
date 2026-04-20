@@ -57,11 +57,11 @@ export function StructuredData() {
     const routeNames: Record<string, string> = {
       "/": "Home",
       "/about": "About",
-      "/projects": "Projects",
       "/publications": "Publications",
       "/teaching": "Teaching",
       "/experience": "Experience",
       "/contact": "Contact",
+      "/blog": "Blog",
     };
 
     const breadcrumbItems = [

@@ -19,14 +19,6 @@ export interface ResumeData {
     year: string;
     details: string;
   }>;
-  research: Array<{
-    id: string;
-    title: string;
-    year: string;
-    institution: string;
-    summary: string;
-    tech: string[];
-  }>;
   publications: Array<{
     id: string;
     authors: string;
@@ -55,10 +47,20 @@ export interface ResumeData {
     details: string[];
   }>;
   skills: {
-    languages: string[];
     programming: string[];
-    other: string[];
+    ml_ai: string[];
+    systems: string[];
+    cloud: string[];
+    tools: string[];
+    languages: string[];
   };
+  blog?: Array<{
+    id: string;
+    title: string;
+    date: string;
+    summary: string;
+    link: string;
+  }>;
   courses: Array<{
     id: string;
     name: string;

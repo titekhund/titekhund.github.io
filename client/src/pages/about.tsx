@@ -92,39 +92,30 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="p-6">
-              <h3 className="font-semibold text-lg mb-4">Languages</h3>
-              <div className="flex flex-wrap gap-2">
-                {resume.skills.languages.map((skill) => (
-                  <Badge key={skill} variant="secondary">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </Card>
-
-            <Card className="p-6">
-              <h3 className="font-semibold text-lg mb-4">Programming & Tools</h3>
-              <div className="flex flex-wrap gap-2">
-                {resume.skills.programming.map((skill) => (
-                  <Badge key={skill} variant="secondary">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </Card>
-
-            <Card className="p-6">
-              <h3 className="font-semibold text-lg mb-4">Other Skills</h3>
-              <div className="flex flex-wrap gap-2">
-                {resume.skills.other.map((skill) => (
-                  <Badge key={skill} variant="secondary">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </Card>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {([
+              { key: "programming", label: "Programming" },
+              { key: "ml_ai", label: "ML & AI" },
+              { key: "systems", label: "Systems" },
+              { key: "cloud", label: "Cloud" },
+              { key: "tools", label: "Tools" },
+              { key: "languages", label: "Languages" },
+            ] as const).map(({ key, label }) => {
+              const items = resume.skills[key] ?? [];
+              if (!items.length) return null;
+              return (
+                <Card key={key} className="p-6">
+                  <h3 className="font-semibold text-lg mb-4">{label}</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {items.map((skill) => (
+                      <Badge key={skill} variant="secondary">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </Card>
+              );
+            })}
           </div>
         </section>
 
