@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tato Khundadze - Publications</title>
-    <link>https://titekhund.github.io/publications</link>
+    <link>https://tatokhundadze.com/publications</link>
     <description>Specializing in Machine Learning Applications to Macroeconomic Modeling</description>
     <language>en-us</language>
     <lastBuildDate>Fri, 10 Oct 2025 11:53:44 GMT</lastBuildDate>
-    <atom:link href="https://titekhund.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tatokhundadze.com/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deep Reinforcement Learning and Sustainable Dynamic Portfolio Management</title>
       <link>https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5463316</link>
@@ -45,8 +45,8 @@
     </item>
     <item>
       <title>Public Spending on Education and External Public Debt in Georgia</title>
-      <link>https://titekhund.github.io/publications#pub-5</link>
-      <guid>https://titekhund.github.io/publications#pub-5</guid>
+      <link>https://tatokhundadze.com/publications#pub-5</link>
+      <guid>https://tatokhundadze.com/publications#pub-5</guid>
       <pubDate>Fri, 01 Jan 2021 00:00:00 GMT</pubDate>
       <description>Khundadze, T. (2021). Public Spending on Education and External Public Debt in Georgia. . Published</description>
       <author>tato.khundadze@gmail.com (Tato Khundadze)</author>
@@ -63,8 +63,8 @@
     </item>
     <item>
       <title>Short History of Georgian Industry</title>
-      <link>https://titekhund.github.io/publications#pub-7</link>
-      <guid>https://titekhund.github.io/publications#pub-7</guid>
+      <link>https://tatokhundadze.com/publications#pub-7</link>
+      <guid>https://tatokhundadze.com/publications#pub-7</guid>
       <pubDate>Mon, 01 Jan 2018 00:00:00 GMT</pubDate>
       <description>Khundadze, T., Avaliani, Z. (2018). Short History of Georgian Industry. Ministry of Education of Georgia. Published</description>
       <author>tato.khundadze@gmail.com (Tato Khundadze)</author>

@@ -58,13 +58,13 @@ export function Footer() {
                 tato.khundadze@gmail.com
               </a>
               <a
-                href="https://titekhund.github.io/"
+                href="https://tatokhundadze.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-sm text-muted-foreground hover:text-foreground transition-colors hover-elevate rounded-md px-2 py-1"
                 data-testid="footer-website"
               >
-                titekhund.github.io
+                https://tatokhundadze.com
               </a>
             </div>
           </div>

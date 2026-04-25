@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://titekhund.github.io/sitemap.xml
+Sitemap: https://tatokhundadze.com/sitemap.xml

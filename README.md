@@ -2,7 +2,7 @@
 
 A personal research hub for Tato Khundadze, PhD Candidate in Economics at The New School for Social Research. The site highlights work at the intersection of economics, machine learning, and policy, and bundles publications, talks, teaching, and interactive projects into one place.
 
-- **Live site:** https://titekhund.github.io
+- **Live site:** https://tatokhundadze.com
 - **Tech:** React 18, TypeScript, Tailwind CSS, Vite, GitHub Pages
 
 ---
@@ -132,6 +132,6 @@ server/              # Express utilities for local development
 - Open for educational and personal reuse—credit appreciated.
 - Questions or collaboration ideas? Reach out:
   - **Email:** tato.khundadze@gmail.com
-  - **Website:** https://titekhund.github.io
+  - **Website:** https://tatokhundadze.com
 
 Built with ❤️ by Tato Khundadze using React, TypeScript, Tailwind CSS, and Vite.

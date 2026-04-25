@@ -38,7 +38,7 @@ function generateRSS() {
   const resumePath = path.join(__dirname, "../client/src/data/resume.json");
   const resumeData: ResumeData = JSON.parse(fs.readFileSync(resumePath, "utf-8"));
   
-  const normalizedBaseUrl = (resumeData.website || "https://titekhund.github.io").replace(/\/$/, "");
+  const normalizedBaseUrl = (resumeData.website || "https://tatokhundadze.com").replace(/\/$/, "");
   const buildDate = new Date().toUTCString();
   
   const rssItems = resumeData.publications
