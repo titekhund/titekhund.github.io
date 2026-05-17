@@ -243,16 +243,16 @@
       ]
     },
     {
-      "id": "exp-parliament",
+      "id": "exp-ai-policy-advisory",
       "role": "Advisor on AI Integration",
-      "organization": "Parliament of Georgia",
-      "location": "Tbilisi, Georgia",
+      "organization": "Public Sector Advisory",
+      "location": "Tbilisi",
       "startDate": "2026",
       "endDate": "Present",
       "details": [
         "Contribute to AI Act preparation and regulatory framework design",
-        "Lead AI fluency training programs for parliamentary staff",
-        "Develop AI-powered parliamentary chatbot for legislative research"
+        "Lead AI fluency training programs for public-sector staff",
+        "Develop AI-powered research chatbot for policy analysis"
       ]
     },
     {
